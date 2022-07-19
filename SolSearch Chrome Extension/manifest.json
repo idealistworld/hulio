@@ -11,5 +11,6 @@
     }],
     "action": {
         "default_popup": "extension/extension.html"
-    }
+    },
+    "options_page": "settings/settings.html"
 }

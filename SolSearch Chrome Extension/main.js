@@ -33,6 +33,7 @@ setTimeout(function(){
   else {
     //Create our safe popup
     var div = document.createElement("div");
+    //This HTML is inserted at the top of the body. 
     div.innerHTML =
       '<div class="popupSafe" id="popupSafe-1">\n' +
         '<div class="overlay"></div>\n' +
