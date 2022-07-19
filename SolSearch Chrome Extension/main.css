@@ -1,24 +1,17 @@
-
-.popup .overlay {
+.popupSafe {
     position: fixed;
-    top: 0px;
-    right: 0px;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    background: red;
+    top: 25px;
+    right: 25px;
+    height: 100px;
+    width: 300px;
+    border: 3px solid #f1f1f1;
+    z-index: 10000000;
+    background-color: greenyellow;
+    border-radius: 25px
 }
 
-.popup .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform:translate(-50%, -50%);
-    background: #fff;
-    width: 450px;
-    height: 220px;
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
+.popupSafe .content{
+  font-size: 30px;
+  position: absolute;
+  
 }

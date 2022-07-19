@@ -37,37 +37,16 @@ setTimeout(function(){
 }, 2000);
 
 
-// //Test code for adding a popup on page
-// //When the document loads call addElement
-// document.body.onload = addElement;
-
-// //addElement function
-// function addElement () {
-//   // create a new div element
-//   const newDiv = document.createElement("div");
-//   newDiv.classList.add("test");
-
-//   // and give it some content
-//   const newContent = document.createTextNode("Hi there and greetings!");
-
-//   // add the text node to the newly created div
-//   newDiv.appendChild(newContsent);
-
-//   // add the newly created element and its content into the DOM
-//   const currentDiv = document.getElementById("div1");
-//   document.body.insertBefore(newDiv, currentDiv);
-// }
-
+//Create  our popup
+//This is the safe popup
 var div = document.createElement("div");
 
 div.innerHTML =
-    '<div class="popup" id="popup-1">\n' +
+    '<div class="popupSafe" id="popupSafe-1">\n' +
       '<div class="overlay"></div>\n' +
       '<div class="content">\n' +
-        '<div class="close-btn">&times;</div>\n' +
-        '<h1>Title</h1>\n' +
-        '<p>Blah blaha ablah</p>\n' +
-      '</div>\n' +
-    '</div>\n' +
+        '<p>This website is secure. Click this link to learn more.</p>\n' +
+      '</div>\n' + 
+    '</div>\n'
 
-document.body.appendChild(div);
+document.body.prepend(div);
