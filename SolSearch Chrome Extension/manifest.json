@@ -1,6 +1,6 @@
 {
     "name": "SolSearch",
-    "description": "Build an Extension!",
+    "description": "Solana dAPP Saftey and Tutorials",
     "version": "1.0",
     "manifest_version": 3,
     "content_scripts": [{
@@ -10,6 +10,6 @@
         "js": ["main.js"]
     }],
     "action": {
-        "default_popup": "secure.html"
+        "default_popup": "extensionOnClick.html"
     }
 }
