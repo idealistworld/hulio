@@ -1,7 +1,24 @@
 
-.red {
-    background-color: red;
-    font-size: 50vw;
-    z-index: -1;
-    display: visable;
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background: red;
+}
+
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    background: #fff;
+    width: 450px;
+    height: 220px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
