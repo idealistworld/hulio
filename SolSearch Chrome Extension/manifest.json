@@ -10,6 +10,6 @@
         "js": ["main.js"]
     }],
     "action": {
-        "default_popup": "extensionOnClick.html"
+        "default_popup": "extension/extension.html"
     }
 }

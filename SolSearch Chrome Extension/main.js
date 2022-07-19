@@ -43,5 +43,3 @@ setTimeout(function(){
     document.body.prepend(div);
   }
 }, 2000);
-
-
