@@ -31,22 +31,17 @@ setTimeout(function(){
   } 
   //If the website is matched by the regex filter. 
   else {
-    //Temporary alert. This will be replaced by an popup thats on the webpage. 
-    alert("SAFU!");
+    //Create our safe popup
+    var div = document.createElement("div");
+    div.innerHTML =
+      '<div class="popupSafe" id="popupSafe-1">\n' +
+        '<div class="overlay"></div>\n' +
+        '<div class="content">\n' +
+          '<p>This website is secure. Click this link to learn more.</p>\n' +
+        '</div>\n' + 
+      '</div>\n'
+    document.body.prepend(div);
   }
 }, 2000);
 
 
-//Create  our popup
-//This is the safe popup
-var div = document.createElement("div");
-
-div.innerHTML =
-    '<div class="popupSafe" id="popupSafe-1">\n' +
-      '<div class="overlay"></div>\n' +
-      '<div class="content">\n' +
-        '<p>This website is secure. Click this link to learn more.</p>\n' +
-      '</div>\n' + 
-    '</div>\n'
-
-document.body.prepend(div);
