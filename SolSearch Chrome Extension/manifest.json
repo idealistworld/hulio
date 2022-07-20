@@ -12,5 +12,8 @@
     "action": {
         "default_popup": "extension/extension.html"
     },
-    "options_page": "settings/settings.html"
+    "options_page": "settings/settings.html",
+    "permissions": [
+        "storage"
+    ]
 }

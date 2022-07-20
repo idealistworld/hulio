@@ -6,5 +6,31 @@
 <main>
     <body>
         <h1>SolSearch Settings</h1>
+        <select id="color">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="yellow">yellow</option>
+        </select>
+
+        <label>
+            Warn about unsafe sites? 
+            <input type="checkbox" id="warningCBox">
+        </label>
+
+        <label>
+            Require retyping the link?
+            <input type="checkbox" id="retypingCBox">
+        </label>
+
+        <label>
+            Show debugging info?
+            <input type="checkbox" id="debugCBox">
+        </label>
+
+        <div id="status"></div>
+        <button id="save">Save</button>
+        <div id="updateStatus"></div>
+        <button id="updateSafeSites">Update Safe Sites List</button>
     </body>
 </main>

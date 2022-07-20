@@ -1,7 +1,27 @@
 //Detect wether the current website is Safe. If not, check if the website is Solana related. If it is Solana related and not in the safe list, warn the user. 
 
-//Set the current url to url
-const url = window.location.href
+//Get saved settings from Chrome storage
+//Initialize global variables
+var warningCBox;
+var retypingCBox;
+var debugCBox;
+
+function updateSettings() {
+  chrome.storage.sync.get({
+    //Set default results
+    warningCBox: true,
+    retypingCBox: true,
+    debugCBox: false,
+  }, function(items) {
+    window.warningCBox = items.warningCBox;
+    window.retypingCBox = items.retypingCBox;
+    window.debugCBox = items.debugCBox;
+  });
+}
+updateSettings();
+
+//Set the var url to current url
+const url = window.location.href;
 
 //This is the filter for the websites. This should be updated, and automated in the future so links can be added easily. 
 const regex = /\/\/(www.)?solend.fi\/|\/\/(www.)?jup.ag\/|\/\/(www.)?orca.so\//gm;
@@ -20,7 +40,9 @@ setTimeout(function(){
     var hasConnectWallet = contentLowerCase.indexOf("connect wallet")!==-1;
     var hasLaunchApp = contentLowerCase.indexOf("launch app")!==-1;
     //Debuging
-    alert("Total score: " + (hasSolana + hasSol + hasConnectWallet + hasLaunchApp) + "\nSolana: " + hasSolana + "\nSol: " + hasSol + "\nConnect Wallet: " + hasConnectWallet + "\nLaunch App: " + hasLaunchApp)
+    if (debugCBox) {
+      alert("Total score: " + (hasSolana + hasSol + hasConnectWallet + hasLaunchApp) + "\nSolana: " + hasSolana + "\nSol: " + hasSol + "\nConnect Wallet: " + hasConnectWallet + "\nLaunch App: " + hasLaunchApp)
+    }
     //If score is above n, alert user that this is a potentially unsafe solana website. 
     if (hasSolana + hasSol + hasConnectWallet + hasLaunchApp >= 2) {
       //Temporary alert. This will be replaced by an popup thats on the webpage. 
@@ -42,5 +64,7 @@ setTimeout(function(){
         '</div>\n' + 
       '</div>\n'
     document.body.prepend(div);
+    //Fade out after a few seconds
+    //Needs to be coded
   }
 }, 2000);
