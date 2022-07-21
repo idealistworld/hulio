@@ -310,7 +310,7 @@ a:hover {
 }
 
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-device-width: 525px) {
     #middle-content {
         visibility: hidden;
     }
