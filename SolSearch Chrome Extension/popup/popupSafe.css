@@ -1,17 +1,40 @@
-.popupSafe {
-    position: fixed;
-    top: 25px;
-    right: 25px;
-    height: 100px;
-    width: 300px;
-    border: 3px solid #f1f1f1;
-    z-index: 10000000;
-    background-color: greenyellow;
-    border-radius: 25px
+#popup-safe {
+  font-family: 'IBM Plex Mono', monospace;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  height: 100px;
+  width: 300px;
+  border: 1em ridge #9d9690;
+  z-index: 10000000;
+  background-color: #F8F4F1;
+  border-radius: 10px;
+  color: #2E2C2A;
+  padding: 10px;
+  animation: fade 0s linear;
+  animation-duration: 5s;
+  opacity: 0;
 }
 
-.popupSafe .content{
-  font-size: 30px;
+#popup-safe #popup-safe-content {
   position: absolute;
-  
+
+}
+
+@keyframes fade {
+  100% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  0% {
+    opacity: 0;
+  }
 }
