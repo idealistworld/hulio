@@ -5,7 +5,7 @@
     right: 0px;
     width: 100vw;
     height: 100vh;
-    z-index: 1000;
+    z-index: 999999998;
     background: rgb(62, 60, 60);
     color: #171716;
     opacity: 0.5;
@@ -18,7 +18,7 @@
     left: 50%;
     transform:translate(-50%, -50%);
     background: #EAE6E2;
-    z-index: 1001;
+    z-index: 999999999;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
