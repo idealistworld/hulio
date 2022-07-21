@@ -1,0 +1,50 @@
+
+#overlay12345 {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background: rgb(62, 60, 60);
+    color: #171716;
+    opacity: 0.5;
+}
+
+#content12345 {
+    border: 1em ridge #9d9690;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    background: #EAE6E2;
+    z-index: 1001;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #5d5956;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+#title12345 {
+    margin: 5px;
+    font-size: 27px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 900;
+    color: #2E2C2A;
+}
+
+#paragraph12345
+{
+    font-size: 15px;
+}
+
+#userInput12345 {
+    outline:0; 
+    background-color: #EDEDED;
+    color: #2E2C2A;
+    height: 30px;
+    width: 400px;
+    margin: 20px;
+    padding: 3px 8px;
+}

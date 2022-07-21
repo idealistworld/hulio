@@ -6,8 +6,8 @@
     "content_scripts": [{
         "matches": ["*://*/*"],
         "run_at": "document_end",
-        "css": ["main.css"], 
-        "js": ["main.js"]
+        "css": ["popup/popupSafe.css", "popup/popupWarn.css", "popup/popupWarnRetype.css", "main.css"], 
+        "js": ["detection/detection.js", "popup/popupSafe.js", "popup/popupWarn.js", "popup/popupWarnRetype.js", "main.js"]
     }],
     "action": {
         "default_popup": "extension/extension.html"
