@@ -5,9 +5,19 @@
 </head>
 <main>
     <body>
+        <div id = "mobile">
+            <img id = "mobile-logo" src = "rsc/img/logo.svg">
+            <h1 id = "mobile-title">Your personal <br> "friend that does crypto".</h1>
+            <p id="mobile-paragraph">This is explaining what it is.</p>
+            <button id="mobile-button" class="install-button"
+            onclick="location.href = 'https://chrome.google.com/webstore/detail/honey-automatic-coupons-r/bmnlcjabgnpnenekpadlanbbkooimhnj';">
+            View on Chrome Store
+        </button>
+        <p id="mobile-disclaimer">[View on Desktop for Best Experience]</p>
+        </div>
         <div id="middle-content">
             <div id="top">
-                <img id="banner-logo" src="rsc/img/logo.svg">
+                <a onclick="home()"><img id="banner-logo" src="rsc/img/logo.svg"></a>
                 <div class="nav-container">
                     <a onclick="home()">
                         <h1 class="link">Home</h1>
