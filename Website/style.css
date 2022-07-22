@@ -1,5 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
+.effect {
+    background-image: linear-gradient(to right, #14F195, #5799CA, #9945FF, #14F195);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: effect 69s linear infinite;
+    display: inline;
+    color: transparent;
+    -webkit-background-size: 500%;
+    background-size: 500%;
+}
+
+@keyframes effect {
+    0% {
+        background-position: 0 600vh;
+    }
+
+    50% {
+        background-position: 600vh 0;
+    }
+    100% {
+        background-position: 0 600vh;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -80,15 +105,17 @@ button:hover {
 
 @keyframes bounce {
     0% {
-       transform: translateY(0);
+        transform: translateY(0);
     }
+
     50% {
-       transform: translateY(-8%);
+        transform: translateY(-8%);
     }
+
     100% {
-       transform: translateY(0);
+        transform: translateY(0);
     }
- } 
+}
 
 #aesthetic-content {
     text-align: center;
@@ -130,6 +157,7 @@ button:hover {
 }
 
 #writing-title {
+    display: inline;
     font-size: 150%;
     font-weight: 900;
 }
@@ -322,8 +350,7 @@ a:hover {
     }
 }
 
-#mobile
-{
+#mobile {
     display: none;
 }
 
@@ -331,6 +358,7 @@ a:hover {
     #middle-content {
         visibility: hidden;
     }
+
     #mobile {
         visibility: visible;
         width: 95%;
@@ -344,6 +372,7 @@ a:hover {
         align-items: center;
         text-align: center;
     }
+
     #mobile-title {
         margin: 2vw 0vw;
         font-size: 5vw;
@@ -351,12 +380,12 @@ a:hover {
         animation: fade 2s linear;
 
     }
-    #mobile-logo
-    {
+
+    #mobile-logo {
         width: 75vw;
     }
-    #mobile-button
-    {
+
+    #mobile-button {
         margin: 4vw;
         padding: 4vw 12vw;
         animation: fade 4s linear;
@@ -365,12 +394,13 @@ a:hover {
         font-size: 3.75vw;
         color: #EDEDED;
     }
-    #mobile-disclaimer
-    {
+
+    #mobile-disclaimer {
         font-size: 2vw;
         color: #b0afae;
         animation: fade 6s linear;
     }
+
     button:after {
         content: '';
         position: absolute;
@@ -387,6 +417,7 @@ a:hover {
         -webkit-transition: width 150ms ease-in-out;
         transition: width 150ms ease-in-out;
     }
+
     button:hover {
         color: #2E2C2A !important;
     }

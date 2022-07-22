@@ -44,7 +44,7 @@ const contact = () => {
 }
 
 const home = () => {
-    document.getElementById("writing-title").innerHTML = `<h1>Your personal <br> "friend that does crypto".</h1>`;
+    document.getElementById("writing-title").innerHTML = `<h1>Your personal <br> "<div class = "effect">friend</div> that does crypto".</h1>`;
     document.getElementById("writing-paragraph").innerHTML = introParagraph;
     document.getElementById("action-button").innerHTML = actionButtons;
     document.getElementById("vanity-metrics").innerHTML = vanityMetrics;
