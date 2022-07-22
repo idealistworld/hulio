@@ -8,16 +8,10 @@ Features:
 
 How to install?
 
-Supported browsers: 
-
-Chrome: Working
-
-Brave: Untested
-
-Other Chromium based browsers: Untested
-
-Step 1: Download the [extension](https://github.com/idealistworld/hulio/releases)
-
-Step 2: Import extension to Browser
-
-Step 3: Profit
+Supported browsers:  
+Chrome: Working  
+Brave: Untested  
+Other Chromium based browsers: Untested   
+Step 1: Download the [extension](https://github.com/idealistworld/hulio/releases)   
+Step 2: Import extension to Browser  
+Step 3: Profit  
