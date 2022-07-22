@@ -5,11 +5,11 @@
   right: 25px;
   height: 100px;
   width: 300px;
-  border: 1em ridge #9d9690;
+  border: 10px ridge rgba(191, 255, 0, 0.6);
   z-index: 10000000;
-  background-color: #F8F4F1;
+  background-color: #2E2C2A;
   border-radius: 10px;
-  color: #2E2C2A;
+  color: white;
   padding: 10px;
   animation: fade 0s linear;
   animation-duration: 5s;

@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: 'IBM Plex Mono', monospace;
+    color: white;
 }
 
 #top {
@@ -42,7 +43,7 @@
 
 body {
     width: 100%;
-    background-color: #F8F4F1;
+    background-color: #2c2b2b;
 }
 
 #middle-content {
@@ -57,12 +58,12 @@ body {
     animation: fade 3.5s linear;
     grid-column: 3 / 4;
     grid-row: 3 / 9;
-    background-color: #2E2C2A;
+    background-color: #212121;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 6% 0 0 6%;
-    border: 1em ridge rgba(191, 255, 0, 0.6);
+    border: 1em ridge #815f93;
 }
 
 button:hover {
@@ -114,7 +115,6 @@ button:hover {
 }
 
 #writing-title {
-    color: #2E2C2A;
     font-size: 150%;
     font-weight: 900;
 }
@@ -131,7 +131,7 @@ button:hover {
 #action-button1 {
     margin-top: 5%;
     padding: 3% 8%;
-    background-color: #2E2C2A;
+    background: #815f93;
     color: white;
 }
 
@@ -150,7 +150,7 @@ button:hover {
     transform: translateX(-50%);
     width: 0;
     height: 100%;
-    background: #EDEDED;
+    background-color: rgb(242, 241, 239);
     z-index: -1;
     -webkit-transition: width 150ms ease-in-out;
     transition: width 150ms ease-in-out;
@@ -165,6 +165,8 @@ button:hover {
 }
 
 button {
+    background-color: #4f4c48;
+    color: white;
     border-radius: 0;
     position: relative;
     overflow: hidden;
@@ -183,14 +185,14 @@ button:after {
     transform: translateX(-50%);
     width: 0;
     height: 100%;
-    background: rgb(86, 151, 81);
+    background: white;
     z-index: -1;
     -webkit-transition: width 150ms ease-in-out;
     transition: width 150ms ease-in-out;
 }
 
 button:hover {
-    color: #fff;
+    color: #2E2C2A;
 }
 
 button:hover:after {
