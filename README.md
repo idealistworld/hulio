@@ -7,6 +7,10 @@ Features:
 - Earn Crypto for learning about DeFi on Solana through interactive tutorials thought 
 
 How to install?
-Step 1: Download extension
-Step 2: Import extension to Chrome
+Supported browsers: 
+Chrome: Working
+Brave: Untested
+Other Chromium based browsers: Untested
+Step 1: Download the [extension](https://github.com/idealistworld/hulio/releases)
+Step 2: Import extension to Browser
 Step 3: Profit
