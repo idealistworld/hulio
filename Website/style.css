@@ -83,7 +83,7 @@ body {
 #aesthetic {
     animation: fade 3.5s linear;
     grid-column: 3 / 4;
-    grid-row: 3 / 9;
+    grid-row: 3 / 8;
     background-color: #212121;
     display: flex;
     align-items: center;
@@ -378,7 +378,7 @@ a:hover {
         font-size: 5vw;
         font-weight: 400;
         animation: fade 2s linear;
-
+        font-weight: 600;
     }
 
     #mobile-logo {
@@ -390,14 +390,14 @@ a:hover {
         padding: 4vw 12vw;
         animation: fade 4s linear;
         background-color: #4f4c48;
-        border: 0.2em solid #2E2C2A;
+        border: 5px solid rgb(57, 57, 57);
         font-size: 3.75vw;
         color: #EDEDED;
     }
 
     #mobile-disclaimer {
-        font-size: 2vw;
-        color: #b0afae;
+        font-size: 2.5vw;
+        color: #d9d9d9;
         animation: fade 6s linear;
     }
 
