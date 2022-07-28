@@ -20,6 +20,7 @@
     50% {
         background-position: 600vh 0;
     }
+
     100% {
         background-position: 0 600vh;
     }
@@ -70,6 +71,9 @@
 body {
     width: 100%;
     background-color: #2c2b2b;
+    background-image: url("background.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 #middle-content {
@@ -85,6 +89,9 @@ body {
     grid-column: 3 / 4;
     grid-row: 3 / 8;
     background-color: #212121;
+    background-image: url("background.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,7 +159,7 @@ button:hover {
 }
 
 #writing-container {
-    width: 85%;
+    width: 87%;
     padding: 1%;
 }
 
@@ -324,7 +331,7 @@ a:hover {
 }
 
 .spacing {
-    margin: 7% 0;
+    margin: 4% 0;
 }
 
 .scroll::-webkit-scrollbar {
