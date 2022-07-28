@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 #popup-safe {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Inter', sans-serif;
   position: fixed;
   bottom: 25px;
   right: 25px;
   width: 400px;
   border: 0.6em ridge #577d43;
   background: url('chrome-extension://__MSG_@ncdkjodjilcfdcjedlnkeakcobiefobn/images/safebackground.svg');
-  background-size: 100% auto; 
+  background-size: cover;
   position: absolute;
   z-index: 10000000;
   border-radius: 12px;
@@ -20,8 +20,7 @@
   opacity: 0;
 }
 
-#title123456
-{
+#title123456 {
   font-size: 20px;
   font-weight: 700;
   color: #EDEDED;
@@ -32,7 +31,7 @@
 }
 
 #popup-safe-paragraph {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Inter', sans-serif;
 
 }
 

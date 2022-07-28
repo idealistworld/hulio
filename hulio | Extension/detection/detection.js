@@ -30,7 +30,6 @@ function warning() {
       retyping();
     }
     else {
-      //Another placeholder
-      alert("Normal warning placeholder")
+      warnPopup();
     }
   }
