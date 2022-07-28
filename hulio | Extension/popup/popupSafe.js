@@ -7,7 +7,8 @@ function safePopup () {
     div.innerHTML =
       '<div id="popup-safe">\n' +
         '<div id="popup-safe-content">\n' +
-          '<p>This website is secure. Click this link to learn more.</p>\n' +
+        '<h1 id = "title123456">This site is secure.</h1>\n' +
+          '<p id = "paragraph123456">This website is secure. Click this link to learn more.</p>\n' +
         '</div>\n' + 
       '</div>\n'
     document.body.prepend(div);

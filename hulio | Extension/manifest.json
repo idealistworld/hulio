@@ -15,5 +15,10 @@
     "options_page": "settings/settings.html",
     "permissions": [
         "storage"
+    ],
+    "web_accessible_resources": [{
+        "resources": ["images/*"],
+        "matches": ["http://*/*", "https://*/*"]
+        }
     ]
 }
