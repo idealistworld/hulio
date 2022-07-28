@@ -70,7 +70,6 @@
 
 body {
     width: 100%;
-    background-color: #2c2b2b;
     background-image: url("background.svg");
     background-repeat: no-repeat;
     background-size: auto;
@@ -96,7 +95,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 6% 0 0 6%;
-    border: 1em ridge #967dd1;
+    border: 1em ridge #6042a6;
 }
 
 button:hover {
@@ -181,7 +180,7 @@ button:hover {
 #action-button1 {
     margin-top: 5%;
     padding: 3% 8%;
-    background: #7560a5;
+    background: #5b3e9e;
     color: #EDEDED;
 }
 
@@ -207,7 +206,7 @@ button:hover {
 }
 
 #action-button1:hover {
-    color: #2E2C2A;
+    color: #343230;
 }
 
 #action-button1:hover:after {
@@ -215,7 +214,7 @@ button:hover {
 }
 
 button {
-    background-color: #4f4c48;
+    background-color: #323230;
     color: #EDEDED;
     border-radius: 0;
     position: relative;
@@ -396,7 +395,7 @@ a:hover {
         margin: 4vw;
         padding: 4vw 12vw;
         animation: fade 4s linear;
-        background-color: #4f4c48;
+        background-color: #323230;
         border: 5px solid rgb(57, 57, 57);
         font-size: 3.75vw;
         color: #EDEDED;
