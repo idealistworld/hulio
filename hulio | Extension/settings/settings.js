@@ -1,11 +1,9 @@
 // Saves options to chrome.storage
 function save_options() {
-    var color = document.getElementById('color').value;
     var warningCBox = document.getElementById('warningCBox').checked;
     var retypingCBox = document.getElementById('retypingCBox').checked;
     var debugCBox = document.getElementById('debugCBox').checked;
     chrome.storage.sync.set({
-      favoriteColor: color,
       warningCBox: warningCBox,
       retypingCBox: retypingCBox,
       debugCBox: debugCBox,
@@ -24,12 +22,10 @@ function save_options() {
   function restore_options() {
     // Use default value color = 'red' and likesColor = true.
     chrome.storage.sync.get({
-      favoriteColor: 'red',
       warningCBox: true,
       retypingCBox: true,
       debugCBox: false,
     }, function(items) {
-      document.getElementById('color').value = items.favoriteColor;
       document.getElementById('warningCBox').checked = items.warningCBox;
       document.getElementById('retypingCBox').checked = items.retypingCBox;
       document.getElementById('debugCBox').checked = items.debugCBox;
@@ -43,11 +39,27 @@ function updateSafeSitesList () {
     //Then generate the new regex filter
     //Needs to be coded
     //Update updateStatus text, then clear it
-    var updateStatus = document.getElementById('updateStatus');
-    updateStatus.textContent = 'Safe Sites List updated.';
-    setTimeout(function() {
-        updateStatus.textContent = '';
-    }, 750);
+    var safeSitesListUrl = "https://idealistworld.github.io/hulio/safeSitesList.txt";
+    var safeSitesList;
+    $.get(safeSitesListUrl, function( data ) {
+        safeSitesList = data.split("\n");
+        chrome.storage.sync.set({
+          safeSitesList: safeSitesList
+        }, function() {
+          // Update status to let user know sites were updated.
+          var updateStatus = document.getElementById('updateStatus');
+          updateStatus.textContent = 'Safe Sites List updated.';
+          setTimeout(function() {
+            updateStatus.textContent = '';
+          }, 750);
+        });
+    });
+    //How to acess the safe sites list. 
+//    setTimeout(function(){
+//      chrome.storage.sync.get(['safeSitesList'], function(items) {
+//        alert(items.safeSitesList)
+//      });
+//    }, 1000);
 }
 
 
