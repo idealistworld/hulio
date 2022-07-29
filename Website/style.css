@@ -70,9 +70,9 @@
 
 body {
     width: 100%;
-    background-image: url("background.svg");
+    background-image: url("background.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: stretch;
 }
 
 #middle-content {
@@ -88,9 +88,9 @@ body {
     grid-column: 3 / 4;
     grid-row: 3 / 8;
     background-color: #212121;
-    background-image: url("background.svg");
+    background-image: url("background.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: stretch;
     display: flex;
     align-items: center;
     justify-content: center;
