@@ -16,7 +16,7 @@
 #content12345 {
     border-radius: 15px;
     border: 0.6em ridge #a64942;
-    background: url('chrome-extension://__MSG_@ncdkjodjilcfdcjedlnkeakcobiefobn/images/retypebackground.svg');
+    background-color: #1d1d1d;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;

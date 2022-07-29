@@ -7,8 +7,8 @@ function warnPopup () {
     div.innerHTML =
       '<div id="popup-warn">\n' +
         '<div id="popup-safe-content">\n' +
-        '<h1 id = "title123456">This site is not secure.</h1>\n' +
-          '<p id = "paragraph123456">This website is secure. Click this link to learn more.</p>\n' +
+        '<h1 id = "title123456">This site might not be secure.</h1>\n' +
+          '<p id = "paragraph123456">This website is not part of your current whitelist. Double check the URL to be safe.</p>\n' +
         '</div>\n' + 
       '</div>\n'
     document.body.prepend(div);
