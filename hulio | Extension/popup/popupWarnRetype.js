@@ -19,8 +19,9 @@ function retyping () {
     {
       if (verified)
       {
-        document.getElementById("overlay12345").style.visibility = "hidden";
-        document.getElementById("content12345").style.visibility = "hidden";  
+        document.getElementById("popup12345").remove();
+        document.getElementById("overlay12345").remove();
+        document.getElementById("content12345").remove();  
       }
     }
     

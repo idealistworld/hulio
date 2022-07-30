@@ -11,7 +11,11 @@ function warnPopup () {
           '<p id = "paragraph123456">This website is not part of your current whitelist. Double check the URL to be safe.</p>\n' +
         '</div>\n' + 
       '</div>\n'
-    document.body.prepend(div);
+    document.body.append(div);
     //Fade out after a few seconds
     //Needs to be coded, and css needs an overhaul
+    setTimeout(() => 
+    {
+      document.getElementById("popup-safe").remove();
+    }, 3000)
   }

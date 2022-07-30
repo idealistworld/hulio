@@ -1,5 +1,6 @@
 //SafePopup Function
 //Runs on all urls that are matched
+
 function safePopup () {
     //Create our safe popup
     var div = document.createElement("div");
@@ -14,4 +15,10 @@ function safePopup () {
     document.body.prepend(div);
     //Fade out after a few seconds
     //Needs to be coded, and css needs an overhaul
+    setTimeout(() => 
+    {
+      document.getElementById("popup-safe").remove();
+    }, 3000)
   }
+
+  
