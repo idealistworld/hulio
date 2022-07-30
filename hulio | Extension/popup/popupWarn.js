@@ -16,6 +16,6 @@ function warnPopup () {
     //Needs to be coded, and css needs an overhaul
     setTimeout(() => 
     {
-      document.getElementById("popup-safe").remove();
+      document.getElementById("popup-warn").remove();
     }, 3000)
   }
