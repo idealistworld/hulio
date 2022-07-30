@@ -5,6 +5,9 @@
 var warningCBox;
 var retypingCBox;
 var debugCBox;
+var safeSitesListStr = '';
+const url = window.location.host;
+var found = -2;
 
 function updateSettings() {
   chrome.storage.sync.get({
@@ -12,37 +15,32 @@ function updateSettings() {
     warningCBox: true,
     retypingCBox: true,
     debugCBox: false,
+    safeSitesListStr: '',
   }, function(items) {
     window.warningCBox = items.warningCBox;
     window.retypingCBox = items.retypingCBox;
     window.debugCBox = items.debugCBox;
+    window.safeSitesListStr = items.safeSitesListStr;
+    window.found = window.safeSitesListStr.indexOf(url);
+    setTimeout(function () {
+      main();
+    }, 1500);
   });
 }
-updateSettings();
-
-
-//Set the var url to current url
-const url = window.location.href;
-
-//This is the filter for the websites. This should be updated, and automated in the future so links can be added easily. 
-const regex = /\/\/(www.)?solend.fi\/|\/\/(www.)?jup.ag\/|\/\/(www.)?orca.so\//gm;
-
-//Use the filter
-const found = url.match(regex);
-
-
 
 //Main logic of the program
 //Delay 2 seconds to ensure that the website is fully loaded before searching through it
-setTimeout(function(){
+function main() {
   //If the website is not matched by the regex filter
-  if (found === null) {
+  if (found === -1) {
     if (warningCBox) {
       detectSolana(debugCBox);  
     }
   } 
   //If the website is matched by the regex filter. 
-  else {
+  else if (found >= 0) {
     safePopup();
   }
-}, 2000);
+}
+
+result = updateSettings();

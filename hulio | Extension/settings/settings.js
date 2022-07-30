@@ -41,10 +41,14 @@ function updateSafeSitesList () {
     //Update updateStatus text, then clear it
     var safeSitesListUrl = "https://idealistworld.github.io/hulio/safeSitesList.txt";
     var safeSitesList;
+    var safeSitesListStr;
     $.get(safeSitesListUrl, function( data ) {
         safeSitesList = data.split("\n");
+        safeSitesListStr = data.toLowerCase();
+        alert(safeSitesListStr);
         chrome.storage.sync.set({
-          safeSitesList: safeSitesList
+          safeSitesList: safeSitesList,
+          safeSitesListStr: safeSitesListStr,
         }, function() {
           // Update status to let user know sites were updated.
           var updateStatus = document.getElementById('updateStatus');
@@ -54,12 +58,6 @@ function updateSafeSitesList () {
           }, 750);
         });
     });
-    //How to acess the safe sites list. 
-//    setTimeout(function(){
-//      chrome.storage.sync.get(['safeSitesList'], function(items) {
-//        alert(items.safeSitesList)
-//      });
-//    }, 1000);
 }
 
 
