@@ -5,26 +5,59 @@
     <title>hulio | Settings</title>
 </head>
 <main>
+
     <body>
-        <h1>hulio | Settings</h1>
-        <label>
-            Warn about unsafe sites? 
-            <input type="checkbox" id="warningCBox">
-        </label>
+        <div class="content">
+            <img id="hulioLogo" src="../images/name.svg"></img>
+            <div id="checkboxOptions">
+                <div class="option"> <label>
+                        Warn about unsafe sites?
+                        <br>
+                        <input type="checkbox" id="warningCBox">
+                    </label></div>
 
-        <label>
-            Require retyping the link?
-            <input type="checkbox" id="retypingCBox">
-        </label>
+                <div class="option">
+                    <label>
+                        Require retyping the link?
+                        <br>
+                        <input type="checkbox" id="retypingCBox">
+                    </label>
+                </div>
 
-        <label>
-            Show debugging info?
-            <input type="checkbox" id="debugCBox">
-        </label>
+                <div class="option">
+                    <label class="inputThing">
+                        Show debugging info?
+                        <br>
+                        <input type="checkbox" id="debugCBox">
+                    </label>
+                </div>
+                <div class="option"> <label>
+                        Warn about unsafe sites?
+                        <br>
+                        <input type="checkbox" id="warningCBox">
+                    </label></div>
 
-        <div id="status"></div>
-        <button id="save">Save</button>
-        <div id="updateStatus"></div>
-        <button id="updateSafeSites">Update Safe Sites List</button>
+                <div class="option">
+                    <label>
+                        Require retyping the link?
+                        <br>
+                        <input type="checkbox" id="retypingCBox">
+                    </label>
+                </div>
+
+                <div class="option">
+                    <label class="inputThing">
+                        Show debugging info?
+                        <br>
+                        <input type="checkbox" id="debugCBox">
+                    </label>
+                </div>
+            </div>
+
+            <div id="status"></div>
+            <button id="save">Save</button>
+            <div id="updateStatus"></div>
+            <button id="updateSafeSites">Update Safe Sites List</button>
+        </div>
     </body>
 </main>

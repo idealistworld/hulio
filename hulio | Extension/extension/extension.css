@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     color: #ededed;
+    font-family: 'Inter', sans-serif;
+
 }
 
 body {
@@ -36,3 +40,7 @@ button {
     padding: 10px;
 }
 
+button:hover {
+    opacity: 0.;
+    cursor: pointer;
+}

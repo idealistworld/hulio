@@ -20,8 +20,6 @@ function retyping () {
       if (verified)
       {
         document.getElementById("popup12345").remove();
-        document.getElementById("overlay12345").remove();
-        document.getElementById("content12345").remove();  
       }
     }
     
