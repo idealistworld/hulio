@@ -27,7 +27,12 @@ function detectSolana(debugCBox) {
 //Only runs if warningCBox is checked
 function warning() {
     if (retypingCBox) {
-      retyping();
+      foundIgnoreWarnRetype = ignoreWarnRetypeListStr.indexOf(url);
+      if (foundIgnoreWarnRetype === -1) {
+        retyping();
+      } else {
+        warnPopup();
+      }
     }
     else {
       warnPopup();

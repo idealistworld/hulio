@@ -3,15 +3,6 @@
 function retyping () {
     var verified = false;
     var risky = true;
-  
-    if (window.location.host.indexOf("www.") === -1)
-    {
-      var currentUrl =   window.location.host;
-    }
-    else
-    {
-      var currentUrl =  window.location.host.substring(4,window.location.host.length);
-    }
     
     var count = 0;
     
@@ -22,11 +13,41 @@ function retyping () {
         document.getElementById("popup12345").remove();
       }
     }
+    function updateIgnoreWarnRetypeList() {
+      var ignoreWarnRetypeList;
+      var ignoreWarnRetypeListStr;
+      chrome.storage.sync.get({
+        ignoreWarnRetypeList: [],
+        ignoreWarnRetypeListStr: '',
+      }, function(items) {
+        ignoreWarnRetypeList = items.ignoreWarnRetypeList;
+        ignoreWarnRetypeListStr = items.ignoreWarnRetypeListStr;
+        setIgnoreWarnRetypeList(ignoreWarnRetypeList, ignoreWarnRetypeListStr, url);
+      });
+    };
+
+    function setIgnoreWarnRetypeList(_list, _str, _urlvar) {
+      alert(_str.indexOf(_urlvar));
+      alert(_list, _str, _urlvar);
+      if (_str.indexOf(urlvar) === -1) {
+        alert(_list.push(_urlvar));
+        chrome.storage.sync.set({
+          ignoreWarnRetypeList: _list.push(_urlvar),
+          ignoreWarnRetypeListStr: _str + _urlvar,
+        }, function() {
+          alert(_list.push(_urlvar));
+        });
+      } else {
+      }
+    }
+
+    updateIgnoreWarnRetypeList();
     
+
     const verify = () =>
     {
       var input = document.getElementById("userInput12345").value;
-      if (input === currentUrl)
+      if (input === url)
       {
         count++;
         document.getElementById("paragraph12345").innerHTML = "<p>Enter the url one more time.</p>";
@@ -59,5 +80,6 @@ function retyping () {
       poppingContent.innerHTML = html + document.body.prepend(poppingContent); 
       document.getElementById("userInput12345").oninput = verify;
     }
-   
+
+
 }

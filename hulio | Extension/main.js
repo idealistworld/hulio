@@ -6,8 +6,21 @@ var warningCBox;
 var retypingCBox;
 var debugCBox;
 var safeSitesListStr = '';
-const url = window.location.host;
-var found = -2;
+var foundSafe = -2;
+var ignoreSitesListStr = '';
+var foundIgnore = -2;
+var ignoreWarnRetypeListStr = '';
+
+
+function removeWww (urlvar) {
+  if (urlvar.indexOf("www.") === -1) {
+      return urlvar;
+  } else {
+    return urlvar.substring(4);
+  }
+}
+
+const url = removeWww(window.location.host);
 
 function updateSettings() {
   chrome.storage.sync.get({
@@ -16,12 +29,16 @@ function updateSettings() {
     retypingCBox: true,
     debugCBox: false,
     safeSitesListStr: '',
+    ignoreSitesListStr: '',
+    ignoreWarnRetypeListStr: '',
   }, function(items) {
     window.warningCBox = items.warningCBox;
     window.retypingCBox = items.retypingCBox;
     window.debugCBox = items.debugCBox;
     window.safeSitesListStr = items.safeSitesListStr;
-    window.found = window.safeSitesListStr.indexOf(url);
+    window.ignoreSitesListStr = items.ignoreSitesListStr;
+    window.ignoreWarnRetypeListStr = items.ignoreWarnRetypeListStr;
+    window.foundSafe = window.safeSitesListStr.indexOf(url);
     setTimeout(function () {
       main();
     }, 1500);
@@ -31,15 +48,16 @@ function updateSettings() {
 //Main logic of the program
 //Delay 2 seconds to ensure that the website is fully loaded before searching through it
 function main() {
-  //If the website is not matched by the regex filter
-  if (found === -1) {
-    if (warningCBox) {
-      detectSolana(debugCBox);  
-    }
-  } 
-  //If the website is matched by the regex filter. 
-  else if (found >= 0) {
+  if (foundSafe >= 0) {
     safePopup();
+  } else if (foundSafe === -1) {
+    if (warningCBox) {
+      foundIgnore = ignoreSitesListStr.indexOf(url);
+      if (foundIgnore === -1) {
+        detectSolana(debugCBox);  
+      }
+    }
+  } else {
   }
 }
 
