@@ -72,7 +72,7 @@ function retyping () {
     if(risky)
     {
       var poppingContent = document.createElement("div");
-      poppingContent.innerHTML = html + document.body.append(poppingContent); 
+      poppingContent.innerHTML = html + document.body.prepend(poppingContent); 
       document.getElementById("userInput12345").oninput = verify;
     }
 

@@ -38,6 +38,9 @@ function warning() {
       }
     }
     else {
-      warnPopup();
+      foundIgnoreWarn = ignoreWarnListStr.indexOf(url);
+        if (foundIgnoreWarn === -1) {
+          warnPopup();
+      }
     }
   }
