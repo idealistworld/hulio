@@ -12,7 +12,7 @@ function detectSolana(debugCBox) {
     var hasLaunchApp = contentLowerCase.indexOf("launch app")!==-1;
     //Apply Weights to Terms
     //Needs to be calculated
-    var totalScore = hasSolana + hasSol + hasConnectWallet + hasLaunchApp
+    var totalScore = hasSolana + hasSol + hasConnectWallet + hasLaunchApp;
     //Debuging
     if (debugCBox) {
       alert("Total score: " + totalScore + "\nSolana: " + hasSolana + "\nSol: " + hasSol + "\nConnect Wallet: " + hasConnectWallet + "\nLaunch App: " + hasLaunchApp)
@@ -27,10 +27,14 @@ function detectSolana(debugCBox) {
 //Only runs if warningCBox is checked
 function warning() {
     if (retypingCBox) {
-      retyping();
+      foundIgnoreWarnRetype = ignoreWarnRetypeListStr.indexOf(url);
+      if (foundIgnoreWarnRetype === -1) {
+        retyping();
+      } else {
+        warnPopup();
+      }
     }
     else {
-      //Another placeholder
-      alert("Normal warning placeholder")
+      warnPopup();
     }
   }

@@ -1,19 +1,51 @@
 {
     "name": "hulio",
-    "description": "Solana dAPP Saftey and Tutorials",
+    "description": "Your Friend that Does Crypto",
     "version": "1.0",
     "manifest_version": 3,
-    "content_scripts": [{
-        "matches": ["*://*/*"],
-        "run_at": "document_end",
-        "css": ["popup/popupSafe.css", "popup/popupWarn.css", "popup/popupWarnRetype.css", "main.css"], 
-        "js": ["detection/detection.js", "popup/popupSafe.js", "popup/popupWarn.js", "popup/popupWarnRetype.js", "main.js"]
-    }],
+    "icons": {
+        "16": "./images/16.png",
+        "48": "./images/48.png",
+        "128": "./images/128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "run_at": "document_end",
+            "css": [
+                "popup/popupSafe.css",
+                "popup/popupWarn.css",
+                "popup/popupWarnRetype.css",
+                "main.css"
+            ],
+            "js": [
+                "detection/detection.js",
+                "popup/popupSafe.js",
+                "popup/popupWarn.js",
+                "popup/popupWarnRetype.js",
+                "main.js"
+            ]
+        }
+    ],
     "action": {
-        "default_popup": "extension/extension.html"
+        "default_popup": "extension/extension.html",
+        "default_icon": "./images/128.png"
     },
     "options_page": "settings/settings.html",
     "permissions": [
         "storage"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "images/*"
+            ],
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ]
+        }
     ]
 }

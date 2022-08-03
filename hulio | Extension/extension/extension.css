@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    color: #ededed;
+    font-family: 'Inter', sans-serif;
+
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ededed;
+    border: 1em ridge #7150be;
+    height: 220px;
+    width: 250px;
+    text-align: center;
+}
+
+#hulioLogo {
+    width: 150px;
+    margin-top: 20px;
+}
+
+
+button {
+    border-radius: 5px;
+    border: 0 solid rgba(0, 0, 0, 0);
+    font-weight: 500;
+    background: #5e38bf;
+    color: #EDEDED;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-transition: color 150ms ease-in-out;
+    transition: color 150ms ease-in-out;
+    font-size: 14px;
+    width: 70%;
+    margin: 11px;
+    padding: 10px;
+}
+
+button:hover {
+    opacity: 0.;
+    cursor: pointer;
+}

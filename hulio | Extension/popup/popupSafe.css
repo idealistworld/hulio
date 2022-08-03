@@ -1,40 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 #popup-safe {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Inter', sans-serif;
   position: fixed;
   bottom: 25px;
   right: 25px;
-  height: 100px;
-  width: 300px;
-  border: 10px ridge rgba(191, 255, 0, 0.6);
-  z-index: 10000000;
-  background-color: #2E2C2A;
-  border-radius: 10px;
-  color: white;
-  padding: 10px;
-  animation: fade 0s linear;
-  animation-duration: 5s;
-  opacity: 0;
-}
-
-#popup-safe #popup-safe-content {
+  width: 400px;
+  border: 0.6em ridge #577d43;
+  background-color: #1d1d1d;
+  background-size: cover;
   position: absolute;
-
+  z-index: 10000000;
+  border-radius: 12px;
+  color: white;
+  padding: 20px;
+  opacity: 1;
 }
 
-@keyframes fade {
-  100% {
-    opacity: 0;
-  }
+#title123456 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #EDEDED;
+}
 
-  70% {
-    opacity: 1;
-  }
+#paragraph123456 {
+  font-size: 15px;
+}
 
-  30% {
-    opacity: 1;
-  }
-
-  0% {
-    opacity: 0;
-  }
+#popup-safe-paragraph {
+  font-family: 'Inter', sans-serif;
 }
