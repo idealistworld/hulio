@@ -14,28 +14,24 @@ function retyping () {
       }
     }
     function updateIgnoreWarnRetypeList() {
-      var ignoreWarnRetypeList;
-      var ignoreWarnRetypeListStr;
+      
       chrome.storage.sync.get({
         ignoreWarnRetypeList: [],
         ignoreWarnRetypeListStr: '',
       }, function(items) {
-        ignoreWarnRetypeList = items.ignoreWarnRetypeList;
-        ignoreWarnRetypeListStr = items.ignoreWarnRetypeListStr;
+        const ignoreWarnRetypeList = items.ignoreWarnRetypeList;
+        var ignoreWarnRetypeListStr = items.ignoreWarnRetypeListStr;
         setIgnoreWarnRetypeList(ignoreWarnRetypeList, ignoreWarnRetypeListStr, url);
       });
     };
 
     function setIgnoreWarnRetypeList(_list, _str, _urlvar) {
-      alert(_str.indexOf(_urlvar));
-      alert(_list, _str, _urlvar);
-      if (_str.indexOf(urlvar) === -1) {
-        alert(_list.push(_urlvar));
+      if (_str.indexOf(_urlvar) == -1) {
+        _list.push(_urlvar);
         chrome.storage.sync.set({
-          ignoreWarnRetypeList: _list.push(_urlvar),
-          ignoreWarnRetypeListStr: _str + _urlvar,
+          ignoreWarnRetypeList: _list,
+          ignoreWarnRetypeListStr: _str + ", " + _urlvar,
         }, function() {
-          alert(_list.push(_urlvar));
         });
       } else {
       }

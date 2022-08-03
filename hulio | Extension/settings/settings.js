@@ -93,13 +93,12 @@ function updateIgnoreSitesList () {
 }
 
 function showIgnoreWarnRetype() {
-  alert('hello');
   setTimeout(function() {
     chrome.storage.sync.get({
-      ignoreWarnRetypeList: '',
+      ignoreWarnRetypeList: [],
       ignoreWarnRetypeListStr: '',
     }, function(items) {
-      alert(items.ignoreWarnRetypeList[0]);
+      alert('Ignore Warn Retype list: ' + items.ignoreWarnRetypeList + 'Type:' + typeof(items.ignoreWarnRetypeList));
       alert(items.ignoreWarnRetypeListStr);
     });
   }, 750);
