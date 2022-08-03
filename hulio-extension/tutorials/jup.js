@@ -30,9 +30,11 @@ const checkStep = () =>{
                 '<button id="button-1">Next</button>\n' +
             '</div>'
             document.getElementById("button-1").onclick = increment
+            const walletButton = document.querySelector('div.px-4.py-3.text-sm.font-semibold.h-full.w-full.leading-none');
+            walletButton.style.border = "red 1px solid";
     }
 
-
+   
     //step 3
     else if(step === 3){
         
