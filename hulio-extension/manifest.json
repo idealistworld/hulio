@@ -11,7 +11,7 @@
     "content_scripts": [
         {
             "js": ["tutorials/jup.js"],
-            "css": ["tutorials/jup.css"],
+            "css": ["tutorials/tutorials.css"],
             "matches": ["https://jup.ag/"]
         },
         {

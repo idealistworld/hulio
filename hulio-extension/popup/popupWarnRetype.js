@@ -37,9 +37,6 @@ function retyping () {
       }
     }
 
-    updateIgnoreWarnRetypeList();
-    
-
     const verify = () =>
     {
       var input = document.getElementById("userInput12345").value;
@@ -57,6 +54,8 @@ function retyping () {
           document.getElementById("paragraph12345").innerHTML = "";
           verified = true;
           close();
+          //Uodate the ignoreWarnRetypeList now that they've typed in in once
+          updateIgnoreWarnRetypeList();
         }
       }
     }
@@ -73,7 +72,7 @@ function retyping () {
     if(risky)
     {
       var poppingContent = document.createElement("div");
-      poppingContent.innerHTML = html + document.body.prepend(poppingContent); 
+      poppingContent.innerHTML = html + document.body.append(poppingContent); 
       document.getElementById("userInput12345").oninput = verify;
     }
 

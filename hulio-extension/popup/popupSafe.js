@@ -12,7 +12,7 @@ function safePopup () {
           '<p id = "paragraph123456">This website is secure. Click this link to learn more.</p>\n' +
         '</div>\n' + 
       '</div>\n'
-    document.body.prepend(div);
+    document.body.append(div);
     //Fade out after a few seconds
     //Needs to be coded, and css needs an overhaul
     setTimeout(() => 

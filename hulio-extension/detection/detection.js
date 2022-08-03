@@ -31,7 +31,10 @@ function warning() {
       if (foundIgnoreWarnRetype === -1) {
         retyping();
       } else {
-        warnPopup();
+        foundIgnoreWarn = ignoreWarnListStr.indexOf(url);
+        if (foundIgnoreWarn === -1) {
+          warnPopup();
+        }
       }
     }
     else {

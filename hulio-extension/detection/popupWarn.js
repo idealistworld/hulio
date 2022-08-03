@@ -29,15 +29,16 @@ function warnPopup () {
       if (_str.indexOf(_urlvar) == -1) {
         _list.push(_urlvar);
         chrome.storage.sync.set({
-          ignoreWarnList: _list,
-          ignoreWarnListStr: _str + ", " + _urlvar,
+          ignoreWarnRetypeList: _list,
+          ignoreWarnRetypeListStr: _str + ", " + _urlvar,
         }, function() {
         });
       } else {
       }
     }
+    
 
-    document.getElementById("buttonIgnore").onclick = updateIgnoreWarnList;
+    document.getElementById("buttonIgnore").onclick = increment
     //Fade out after a few seconds
     //Needs to be coded, and css needs an overhaul
     setTimeout(() => 
