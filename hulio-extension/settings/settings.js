@@ -117,6 +117,29 @@ function showIgnoreWarn() {
 }
 
 
+//This function shwos all the lists and strings that are currently in storage. 
+function showAll () {
+  chrome.storage.sync.get({
+    safeSitesList: [],
+    safeSitesListStr: '',
+    ignoreSitesList: [],
+    ignoreSitesListStr: '',
+    ignoreWarnList: [],
+    ignoreWarnListStr: '',
+    ignoreWarnRetypeList: [],
+    ignoreWarnRetypeListStr: '',
+  }, function(items) {
+    alert('Safe Sites List: ' + items.safeSitesList + 
+    '\n Safe Sites List String: ' + items.safeSitesListStr +
+    '\n Ignore Sites List: ' + items.ignoreSitesList + 
+    '\n Ignore Sites List String: ' + items.ignoreSitesListStr +
+    '\n Ignore Warn List: ' + items.ignoreWarnList + 
+    '\n Ignore Warn List String: ' + items.ignoreWarnListStr +
+    '\n Ignore Warn Retype List: ' + items.ignoreWarnRetypeList +
+    '\n Ignore Warn Retype List: ' + items.ignoreWarnRetypeListStr);
+  });
+}
+
 window.onload=function(){
     //Using the vars el1, el2 here to avoid a bug where it said document.getElementById('save') was null
     var el1 = document.getElementById('save')
@@ -138,6 +161,10 @@ window.onload=function(){
     var el5 = document.getElementById('showIgnoreWarnSites')
     if (el5) {
       el5.addEventListener('click', showIgnoreWarn)
+    }
+    var el6 = document.getElementById('showAllLists')
+    if (el6) {
+      el6.addEventListener('click', showAll)
     }
 }
 document.addEventListener('DOMContentLoaded', restore_options);

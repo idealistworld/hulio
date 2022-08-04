@@ -164,13 +164,12 @@ button:hover {
 
 #writing-title {
     display: inline;
-    font-size: 175%;
+    font-size: 150%;
     font-weight: 900;
 }
 
 #writing-paragraph {
     font-weight: 400;
-    font-size: 125%;
     margin: 2% 0 0 0;
 }
 
