@@ -38,11 +38,9 @@ const checkStep = () => {
             '</div>'
         document.getElementById("button-1").onclick = increment2
         const walletButton = document.querySelector('div.px-4.py-3.text-sm.font-semibold.h-full.w-full.leading-none');
-        if (walletButton) {
-            walletButton.addEventListener('click', increment);
-            walletButton.style.border = "#a64942 5px solid";
-            walletButton.style.borderRadius = "10px";
-        }
+        walletButton.addEventListener('click', increment);
+        walletButton.style.border = "#a64942 5px solid";
+        walletButton.style.borderRadius = "10px";
     }
 
 
@@ -59,33 +57,7 @@ const checkStep = () => {
     }
 
     else if (step === 4) {
-        popup.innerHTML =
-            '<div class="popup-tutorial-template popup-1">\n' +
-            '<h1 id = "site-title">Trade</h1>\n' +
-            '<p id = "paragraph123456">Now that your wallet is connected, let’s make your first trade.</p>\n' +
-            "<button id='button-1'>Let's do it</button>\n" +
-            '</div>'
-        document.getElementById("button-1").onclick = increment
-    }
-
-    else if (step === 5) {
-        popup.innerHTML =
-            '<div class="popup-tutorial-template popup-1">\n' +
-            '<h1 id = "site-title">Sell Solana</h1>\n' +
-            "<p id = 'paragraph123456'>Just different countries, different apps in Solana work with different crypto currencies. Many different apps on Solana. </p>\n" +
-            "<button id='button-1'>Let's do it</button>\n" +
-            '</div>'
-        document.getElementById("button-1").onclick = increment
-    }
-
-    else if (step === 6) {
-        popup.innerHTML =
-            '<div class="popup-tutorial-template popup-1">\n' +
-            '<h1 id = "site-title">Sell Solana</h1>\n' +
-            '<p id = "paragraph123456">Now that your wallet is connected, let’s make your first trade.</p>\n' +
-            "<button id='button-1'>Let's do it</button>\n" +
-            '</div>'
-        document.getElementById("button-1").onclick = increment
+        
     }
 }
 

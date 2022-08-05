@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="settings.css">
-    <script type="text/javascript" src="settings.js"></script>
+    <script type="text/javascript" src="advanced.js"></script>
     <script type="text/javascript" src="jquery-3.6.0.js"></script>
     <title>hulio | Settings</title>
 </head>
@@ -24,11 +24,23 @@
                     </label>
                 </div>
 
+                <div class="option">
+                    <label class="inputThing">
+                        Show debugging info?
+                        <br>
+                        <input type="checkbox" id="debugCBox">
+                    </label>
+                </div>
             </div>
 
             <div id="status"></div>
             <button id="save">Save</button>
-            <button id="advancedSettings">Advanced Settings</button>
+            <div id="updateSafeSitesStatus"></div>
+            <button id="updateSafeSites">Update Safe Sites List</button>
+            <div id="updateIgnoreSitesStatus"></div>
+            <button id="updateIgnoreSitesButton">Update Ignore Sites List</button>
+            <button id="showIgnoreWarnRetypeSites">Show Ignore Retype Sites List</button>
+            <button id="showIgnoreWarnSites">Show Ignore Retype Sites List</button>
             <button id="showAllLists">Show All Lists</button>
         </div>
     </body>
