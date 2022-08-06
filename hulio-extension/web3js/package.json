@@ -9,10 +9,18 @@
   "author": "Adrien",
   "license": "ISC",
   "dependencies": {
-    "@solana/web3.js": "^1.50.1"
+    "@solana/wallet-adapter-wallets": "^0.17.0",
+    "@solana/web3.js": "^1.50.1",
+    "crypto": "^1.0.1",
+    "crypto-es": "^1.2.7"
   },
   "devDependencies": {
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
+  },
+  "paths": {
+    "crypto": [
+      "node_modules/crypto-js"
+    ]
   }
 }
