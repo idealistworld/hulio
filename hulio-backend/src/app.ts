@@ -1,6 +1,7 @@
-import express, {Request, Response} from 'express';
+import express, {NextFunction, Request, Response} from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import AppError from './utils/appError';
 
 import websiteRouter from './routes/website.routes'
 
@@ -29,6 +30,27 @@ app.get('/api/healthChecker', async (_, res: Response) => {
       status: 'success'
     });
   });
+
+
+// UNHANDLED ROUTE
+app.all('*', (req: Request, res: Response, next: NextFunction) => {
+    next(new AppError(404, `Route ${req.originalUrl} not found`));
+});
+
+
+// GLOBAL ERROR HANDLER
+app.use(
+    (error: AppError, req: Request, res: Response, next: NextFunction) => {
+        error.status = error.status || 'error';
+        error.statusCode = error.statusCode || 500;
+
+        res.status(error.statusCode).json({
+        status: error.status,
+        message: error.message,
+        });
+    }
+);
+  
 
 
 app.listen(port, () =>{

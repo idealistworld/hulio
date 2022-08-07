@@ -24,13 +24,13 @@ router.get('get_website/:url', getWebsite);
 
 /**
   * Add website data
-  * @body 
+  * @body {string url, string tx_hash}
 */
 router.post('create_website', createWebsite);
 
 /**
-  * Update website data
-  * @body 
+  * Update website tx_hash
+  * @body {string url, string tx_hash}
 */
 router.put('update_website', updateWebsite);
 
