@@ -7,9 +7,22 @@ function increment () {
     checkStep()
 };
 
-function increment2 () {
-    step = step + 2
-    checkStep()
+function incrementOnClick () {
+    if (typeof variable == 'undefined') {
+        checkStep();
+    } else {
+        step = step + 2
+        checkStep();
+    }
+}
+
+function checkCrypto (elem, crypto) {
+    el = document.querySelector(elem)
+    if (el.innerHTML === crypto) {
+        increment();
+    } else {
+        checkStep();
+    }
 }
 
 const checkStep = () => {
@@ -36,13 +49,14 @@ const checkStep = () => {
             '<p id = "paragraph123456">Have you connected your wallet? Click the “Connect Wallet” button to get started.</p>\n' +
             '<button id="button-1">I already have</button>\n' +
             '</div>'
-        document.getElementById("button-1").onclick = increment2
         const walletButton = document.querySelector('div.px-4.py-3.text-sm.font-semibold.h-full.w-full.leading-none');
         if (walletButton) {
             walletButton.addEventListener('click', increment);
             walletButton.style.border = "#a64942 5px solid";
             walletButton.style.borderRadius = "10px";
         }
+        document.getElementById("button-1").onclick = incrementOnClick
+
     }
 
 
@@ -71,8 +85,8 @@ const checkStep = () => {
     else if (step === 5) {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
-            '<h1 id = "site-title">Sell Solana</h1>\n' +
-            "<p id = 'paragraph123456'>Just different countries, different apps in Solana work with different crypto currencies. Many different apps on Solana. </p>\n" +
+            '<h1 id = "site-title">Crypto Currency</h1>\n' +
+            "<p id = 'paragraph123456'>Just like different countries have different currencies, there are many crypto currencies. This tutorial will show you how to exchange one crypto currency for another.</p>\n" +
             "<button id='button-1'>Let's do it</button>\n" +
             '</div>'
         document.getElementById("button-1").onclick = increment
@@ -82,11 +96,16 @@ const checkStep = () => {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
             '<h1 id = "site-title">Sell Solana</h1>\n' +
-            '<p id = "paragraph123456">Now that your wallet is connected, let’s make your first trade.</p>\n' +
-            "<button id='button-1'>Let's do it</button>\n" +
+            "<p id = 'paragraph123456'>You recieved some Solana earlier. Now sell it. Choose it from the drop down menu.</p>\n" +
+            "<button id='button-1'>I did</button>\n" +
             '</div>'
         document.getElementById("button-1").onclick = increment
     }
 }
 
-checkStep()
+
+
+
+checkStep();
+
+//checkCrypto ('//*[@id="__next"]/div[1]/div/div[3]/div/div[3]/div[2]/form/div[1]/div[2]/div/div/div/div/button/div[2]', 'SOL');

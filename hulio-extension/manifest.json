@@ -12,7 +12,7 @@
         {
             "js": ["tutorials/jup.js"],
             "css": ["tutorials/jup.css"],
-            "matches": ["https://jup.ag/"]
+            "matches": ["https://jup.ag/*"]
         },
         {
             "matches": [
