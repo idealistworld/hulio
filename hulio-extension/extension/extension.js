@@ -1,6 +1,6 @@
 var internalSettingsUrl = chrome.runtime.getURL("settings/settings.html");
 function openTab () {
-    chrome.tabs.create({ url: internalUrl }, function (tab) {
+    chrome.tabs.create({ url: internalSettingsUrl }, function (tab) {
         console.log("New tab launched with http://yoursite.com/");
     });
 }
