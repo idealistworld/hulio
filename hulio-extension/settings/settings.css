@@ -3,7 +3,6 @@
 
 label {
     font-family: 'Inter', sans-serif;
-
 }
 
 body {
@@ -32,14 +31,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 70%;
-    justify-content: space-evenly;
+    justify-content: space-around;
     font-weight: 400;
-    font-size: 15px;
 }
 
 label {
     display: block;
     text-align: center;
+    font-weight: 700;
+    font-size: 17px;
 }
 
 .option
@@ -50,18 +50,15 @@ label {
 button {
     border-radius: 5px;
     border: 0 solid rgba(0, 0, 0, 0);
-    height: 50px;
     font-weight: 600;
     background: #5e38bf;
     color: #EDEDED;
     position: relative;
-    overflow: hidden;
     z-index: 1;
-    -webkit-transition: color 150ms ease-in-out;
-    transition: color 150ms ease-in-out;
     width: 70%;
     margin: 11px;
     padding: 10px;
+    font-size: 20px;
 }
 
 button:hover {
