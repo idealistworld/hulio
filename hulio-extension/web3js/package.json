@@ -1,0 +1,18 @@
+{
+  "name": "web3js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adrien",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/web3.js": "^1.50.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
