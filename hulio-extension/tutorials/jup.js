@@ -8,12 +8,8 @@ function increment () {
 };
 
 function incrementOnClick () {
-    if (typeof variable == 'undefined') {
-        checkStep();
-    } else {
-        step = step + 2
-        checkStep();
-    }
+    step = step + 2
+    checkStep();
 }
 
 function checkCrypto (elem, crypto) {
@@ -54,9 +50,9 @@ const checkStep = () => {
             walletButton.addEventListener('click', increment);
             walletButton.style.border = "#a64942 5px solid";
             walletButton.style.borderRadius = "10px";
-        }
+        } else {
         document.getElementById("button-1").onclick = incrementOnClick
-
+        }
     }
 
 
