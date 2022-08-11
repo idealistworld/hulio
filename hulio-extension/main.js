@@ -8,8 +8,10 @@ var debugCBox;
 var safeSitesListStr = '';
 var foundSafe = -2;
 var ignoreSitesListStr = '';
-var foundIgnore = -2;
+var foundIgnoreWarnRetype = -2;
 var ignoreWarnRetypeListStr = '';
+var foundIgnoreWarn = -2;
+var ignoreWarnListStr = '';
 
 
 function removeWww (urlvar) {
@@ -31,6 +33,7 @@ function updateSettings() {
     safeSitesListStr: '',
     ignoreSitesListStr: '',
     ignoreWarnRetypeListStr: '',
+    ignoreWarnListStr: '',
   }, function(items) {
     window.warningCBox = items.warningCBox;
     window.retypingCBox = items.retypingCBox;
@@ -38,6 +41,7 @@ function updateSettings() {
     window.safeSitesListStr = items.safeSitesListStr;
     window.ignoreSitesListStr = items.ignoreSitesListStr;
     window.ignoreWarnRetypeListStr = items.ignoreWarnRetypeListStr;
+    window.ignoreWarnListStr = items.ignoreWarnListStr;
     window.foundSafe = window.safeSitesListStr.indexOf(url);
     setTimeout(function () {
       main();
@@ -52,8 +56,8 @@ function main() {
     safePopup();
   } else if (foundSafe === -1) {
     if (warningCBox) {
-      foundIgnore = ignoreSitesListStr.indexOf(url);
-      if (foundIgnore === -1) {
+      foundIgnoreWarnRetype = ignoreSitesListStr.indexOf(url);
+      if (foundIgnoreWarnRetype === -1) {
         detectSolana(debugCBox);  
       }
     }

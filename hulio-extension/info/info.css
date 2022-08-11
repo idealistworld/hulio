@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-label {
+* {
     font-family: 'Inter', sans-serif;
 }
 
@@ -18,50 +18,88 @@ body {
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
   height: 70%;
+  width: 70%;
 }
 
-#hulioLogo {
-    width: 50%;
-}
-
-#checkboxOptions {
-    display: flex;
-    flex-wrap: wrap;
-    width: 70%;
-    justify-content: space-around;
-    font-weight: 400;
-}
-
-label {
-    display: block;
-    text-align: center;
-    font-weight: 700;
-    font-size: 17px;
-}
-
-.option
-{
-    margin: 10px 5px;
+h1 {
+    font-weight: 900;
+    font-size: 80px;
 }
 
 button {
     border-radius: 5px;
     border: 0 solid rgba(0, 0, 0, 0);
+    height: 50px;
     font-weight: 600;
     background: #5e38bf;
     color: #EDEDED;
     position: relative;
+    overflow: hidden;
     z-index: 1;
+    -webkit-transition: color 150ms ease-in-out;
+    transition: color 150ms ease-in-out;
     width: 70%;
     margin: 11px;
     padding: 10px;
-    font-size: 20px;
 }
 
 button:hover {
     opacity: 0.6;
     cursor: pointer;
+}
+
+#siteStats {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url("../images/background.jpg");
+    border: 1em ridge #6042a6;
+    border-radius: 20px;
+}
+
+.stat {
+    width: 50%;
+    text-align: center;
+    overflow-wrap: break-word;
+    margin: 8px 0px;
+    line-height: 20px;
+}
+
+#signingAddress {
+    width: 100%;
+    font-size: 30px;
+}
+
+#signingAddressTitle {
+    width: 100%;
+    font-size: 55px;
+}
+
+.statTitle {
+    font-size: 35px;
+    line-height: 50px;
+
+}
+
+a {
+    color: rgb(171, 143, 255);
+    font-weight: 700;
+    line-height: 25px;
+    font-size: 24px;
+}
+
+a:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#projectTitle {
+    margin-bottom: 35px;
+    padding: 0px;
+    font-size: 100px;
 }

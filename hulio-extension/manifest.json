@@ -12,7 +12,7 @@
         {
             "js": ["tutorials/jup.js"],
             "css": ["tutorials/jup.css"],
-            "matches": ["https://jup.ag/"]
+            "matches": ["https://jup.ag/*"]
         },
         {
             "matches": [
@@ -34,6 +34,9 @@
             ]
         }
     ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "action": {
         "default_popup": "extension/extension.html",
         "default_icon": "./images/128.png"

@@ -37,9 +37,6 @@ function retyping () {
       }
     }
 
-    updateIgnoreWarnRetypeList();
-    
-
     const verify = () =>
     {
       var input = document.getElementById("userInput12345").value;
@@ -57,6 +54,8 @@ function retyping () {
           document.getElementById("paragraph12345").innerHTML = "";
           verified = true;
           close();
+          //Uodate the ignoreWarnRetypeList now that they've typed in in once
+          updateIgnoreWarnRetypeList();
         }
       }
     }

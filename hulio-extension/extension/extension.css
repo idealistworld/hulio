@@ -3,7 +3,6 @@
 * {
     color: #ededed;
     font-family: 'Inter', sans-serif;
-
 }
 
 body {
@@ -41,6 +40,6 @@ button {
 }
 
 button:hover {
-    opacity: 0.;
+    opacity: 0.6;
     cursor: pointer;
 }

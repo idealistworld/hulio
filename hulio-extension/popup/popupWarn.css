@@ -7,7 +7,7 @@
     bottom: 25px;
     right: 25px;
     width: 400px;
-    border: 0.6em ridge #e4b827;
+    border: 1em ridge #e4b827;
     background-color: #1d1d1d;
     background-size: cover;
     position: absolute;
@@ -32,4 +32,23 @@
 
 #popup-safe-paragraph {
     font-family: 'Inter', sans-serif;
+}
+
+#buttonIgnore {
+        border-radius: 7px;
+        border: 0.7px solid rgb(255, 255, 255);
+        font-weight: 700;
+        background-color: #212121;
+        color: #EDEDED;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        padding: 3px;
+        width: 100%;
+}
+
+
+#buttonIgnore:hover{
+    opacity: 0.6;
+    cursor: pointer;
 }
