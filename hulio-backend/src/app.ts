@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(cors());
-let cookieMiddleware = cookieParser();
-app.use(cookieMiddleware());
+// let cookieMiddleware = cookieParser();
+// app.use(cookieMiddleware());
 
 // ROUTES
 app.use('/api/website', websiteRouter);

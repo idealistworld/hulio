@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import pool from '../../database'
+import verifyWebsite from "../utils/verifyWebsite";
 
 export const getWebsites = async (
     req: Request,
@@ -42,12 +43,19 @@ export const createWebsite = async (
 ) =>{
     try{
         const {url, tx_hash} = req.body;
-        let result = await pool.query('INSERT INTO website (url, tx_hash) VALUES ($1, $2)', [url, tx_hash]);
-        res.status(200).json({
-            status: 'success',
-            result
-        });
-
+        const verified = await verifyWebsite(url, tx_hash)
+        if(verified){
+            let result = await pool.query('INSERT INTO website (url, tx_hash, verified) VALUES ($1, $2, $3)', [url, tx_hash, true]);
+            res.status(200).json({
+                status: 'success',
+                result
+            });
+        } else {
+            res.status(500).json({
+                status: 'invalid',
+                url
+            });
+        }
     } catch(err:any){
         next(err)
     }
@@ -60,11 +68,19 @@ export const updateWebsite = async (
 ) =>{
     try{
         const {url, tx_hash} = req.body;
-        let result = await pool.query('UPDATE website SET tx_hash=$1 WHERE url=$2', [tx_hash, url]);
-        res.status(200).json({
-            status: 'success',
-            result
-        });
+        const verified = await verifyWebsite(url, tx_hash)
+        if(verified){
+            let result = await pool.query('UPDATE website SET tx_hash=$1 WHERE url=$2', [tx_hash, url]);
+            res.status(200).json({
+                status: 'success',
+                result
+            });
+        } else{
+            res.status(500).json({
+                status: 'invalid',
+                url
+            });
+        }
         
     } catch(err:any){
         next(err)
