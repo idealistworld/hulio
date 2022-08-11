@@ -3,9 +3,11 @@ function save_options() {
     var warningCBox = document.getElementById('warningCBox').checked;
     var retypingCBox = document.getElementById('retypingCBox').checked;
     var debugCBox = document.getElementById('debugCBox').checked;
+    var tutorialsCBox = document.getElementById('tutorialsCBox').checked;
     chrome.storage.sync.set({
       warningCBox: warningCBox,
       retypingCBox: retypingCBox,
+      tutorialsCBox: tutorialsCBox,
       debugCBox: debugCBox,
     }, function() {
       // Update status to let user know options were saved.
@@ -24,10 +26,12 @@ function save_options() {
     chrome.storage.sync.get({
       warningCBox: true,
       retypingCBox: true,
+      tutorialsCBox: true, 
       debugCBox: false,
     }, function(items) {
       document.getElementById('warningCBox').checked = items.warningCBox;
       document.getElementById('retypingCBox').checked = items.retypingCBox;
+      document.getElementById('tutorialsCBox').checked = items.tutorialsCBox;
       document.getElementById('debugCBox').checked = items.debugCBox;
     });
   }
