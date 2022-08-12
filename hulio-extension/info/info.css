@@ -52,11 +52,9 @@ button:hover {
 }
 
 #siteStats {
-    display: flex;
-    flex-wrap: wrap;
+    height: 1200%;
     width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
+    position: fixed;
     background-image: url("../images/background.jpg");
     border: 1em ridge #6042a6;
     border-radius: 20px;

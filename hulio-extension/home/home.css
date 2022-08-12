@@ -24,9 +24,24 @@ body {
   width: 70%;
 }
 
+#title 
+{
+    margin: 20px;
+    width: 100%;
+}
+
 h1 {
     font-weight: 900;
     font-size: 80px;
+    text-align: center;
+}
+
+#siteStats {
+    padding: 20px 40px;
+    width: 100%;
+    background-image: url("../images/background.jpg");
+    border: 1em ridge #6042a6;
+    border-radius: 20px;
 }
 
 button {
@@ -51,54 +66,79 @@ button:hover {
     cursor: pointer;
 }
 
-#siteStats {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    background-image: url("../images/background.jpg");
-    border: 1em ridge #6042a6;
-    border-radius: 20px;
-}
-
-.stat {
-    width: 50%;
-    text-align: center;
-    overflow-wrap: break-word;
-    margin: 8px 0px;
-    line-height: 20px;
-}
-
-#signingAddress {
-    width: 100%;
-    font-size: 30px;
-}
-
-#signingAddressTitle {
-    width: 100%;
-    font-size: 55px;
-}
-
-.statTitle {
-    font-size: 35px;
-    line-height: 50px;
-
-}
-
-a {
-    color: rgb(171, 143, 255);
-    font-weight: 700;
-    line-height: 25px;
-}
-
 a:hover {
-    cursor: pointer;
     opacity: 0.6;
+    cursor: pointer;
 }
 
-#projectTitle {
-    margin-bottom: 35px;
-    padding: 0px;
-    font-size: 100px;
+p {
+    font-weight: 600;
+    font-size: 1.3em;
+    margin: 3px;
+}
+
+.container{
+    width: 100%;
+    display:block;
+  }
+  .carousel{
+    display:block;
+    width: 97%;
+    overflow-x: scroll;
+    padding: 10px;
+    margin: 0;
+    white-space: nowrap; 
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  .item {
+      display: inline-block;
+      width: 300px;
+      margin: 0 10px;
+      height: 100px;
+      background: rgba(0, 0, 0, 0.05) no-repeat center center;
+      background-size: cover;
+      position:relative;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #dfdfdf;
+  }
+  .item div{
+    width: 100%;
+    top:10%;
+    position:absolute;
+    text-align:center;
+    font-size: 1em;
+    color: white;
+  }
+  .item h1{
+    top: 60%;
+    position: absolute;
+    color: white;
+    width: 100%;
+    font-size: 1em;
+  }
+  #magicEden{
+    background-image: url(https://www.asiacryptotoday.com/wp-content/uploads/2021/11/magic-eden.jpg);
+  }
+  #solanart{
+    background-image:url(https://solanart.io/solanart-og.png);
+  }
+  #metaplex{
+     background-image: url(https://blockworks.co/wp-content/uploads/2022/01/metaplex-solana-1.jpeg);
+  }
+  #solsea{
+    background-image:url(https://fkssne4vwr6urssz5paxyz2vg2bbufgn2n5oxlxbamla4w72dqbq.arweave.net/KqUmk5W0fUjKWevBfGdVNoIaFM3Teuuu4QMWDlv6HAM?ext=png)
+  }
+  #jupiter{
+    background-image:url(https://www.exodus.com/img/news/content/2022/06/B455-1900.jpeg)
+  }
+
+#orca{
+  background-image:url(https://blockworks.co/wp-content/uploads/2021/09/1_hY6pm0QtnNF0lZhGfHqEEg.jpg);
+}
+#raydium{
+   background-image: url(https://everipedia-storage.s3.amazonaws.com/ProfilePicture/lang_en/raydium-ray/mainphoto.jpeg);
+}
+#serum{
+  background-image:url(https://miro.medium.com/max/1200/1*g0mbylAXMP2pj1wvmAIavQ.jpeg)
 }
