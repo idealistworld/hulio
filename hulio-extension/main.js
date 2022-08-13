@@ -6,12 +6,12 @@ var warningCBox;
 var retypingCBox;
 var debugCBox;
 var SafeDB;
-var foundSafe = -2;
-var ignoreSitesListStr = '';
-var foundIgnoreWarnRetype = -2;
-var ignoreWarnRetypeListStr = '';
+var foundSafe = -1;
+var ignoreSitesList;
+var foundIgnoreSites = -2;
+var ignoreWarnRetypeList;
 var foundIgnoreWarn = -2;
-var ignoreWarnListStr = '';
+var ignoreWarnList;
 
 
 function removeWww (urlvar) {
@@ -32,17 +32,17 @@ function updateSettings() {
     retypingCBox: true,
     debugCBox: false,
     SafeDB: '',
-    ignoreSitesListStr: '',
-    ignoreWarnRetypeListStr: '',
-    ignoreWarnListStr: '',
+    ignoreSitesList: [],
+    ignoreWarnRetypeList: '',
+    ignoreWarnList: '',
   }, function(items) {
     window.warningCBox = items.warningCBox;
     window.retypingCBox = items.retypingCBox;
     window.debugCBox = items.debugCBox;
     window.SafeDB = items.SafeDB;
-    window.ignoreSitesListStr = items.ignoreSitesListStr;
-    window.ignoreWarnRetypeListStr = items.ignoreWarnRetypeListStr;
-    window.ignoreWarnListStr = items.ignoreWarnListStr;
+    window.ignoreSitesList = items.ignoreSitesList;
+    window.ignoreWarnRetypeList = items.ignoreWarnRetypeList;
+    window.ignoreWarnList = items.ignoreWarnList;
     setTimeout(function () {
       checkDB(SafeDB, url)
       main();
@@ -70,13 +70,22 @@ function main() {
     safePopup();
   } else if (foundSafe === -1) {
     if (warningCBox) {
-      foundIgnoreWarnRetype = ignoreSitesListStr.indexOf(url);
-      if (foundIgnoreWarnRetype === -1) {
+      if (!(checkList (ignoreSitesList, url))) {
         detectSolana(debugCBox);  
       }
     }
   } else {
   }
 }
+
+function checkList (lst, match) {
+  for (let i = 0; i < lst.length; i++) {
+    if (lst[i].indexOf(match) >= 0) {
+      return true
+    }
+  }
+  return false
+}
+
 
 result = updateSettings();

@@ -17,21 +17,18 @@ function warnPopup () {
     function updateIgnoreWarnList() {
       chrome.storage.sync.get({
         ignoreWarnList: [],
-        ignoreWarnListStr: '',
       }, function(items) {
         const ignoreWarnList = items.ignoreWarnList;
-        var ignoreWarnListStr = items.ignoreWarnListStr;
-        setIgnoreWarnRetypeList(ignoreWarnList, ignoreWarnListStr, url);
+        setIgnoreWarnRetypeList(ignoreWarnList, url);
       });
     };
 
-    function setIgnoreWarnRetypeList(_list, _str, _urlvar) {
+    function setIgnoreWarnRetypeList(_list, _urlvar) {
       document.getElementById("popup-warn").remove();
       if (_str.indexOf(_urlvar) == -1) {
         _list.push(_urlvar);
         chrome.storage.sync.set({
           ignoreWarnList: _list,
-          ignoreWarnListStr: _str + ", " + _urlvar,
         }, function() {
         });
       } else {

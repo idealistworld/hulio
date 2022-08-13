@@ -32,13 +32,10 @@ function updateIgnoreSitesList () {
   //Update updateStatus text, then clear it
   var ignoreSitesListUrl = "https://idealistworld.github.io/hulio/ignoreSitesList.txt";
   var ignoreSitesList;
-  var ignoreSitesListStr;
   $.get(ignoreSitesListUrl, function( data ) {
     ignoreSitesList = data.split("\n");
-    ignoreSitesListStr = data.toLowerCase();
       chrome.storage.sync.set({
         ignoreSitesList: ignoreSitesList,
-        ignoreSitesListStr: ignoreSitesListStr,
       }, function() {
         // Update status to let user know sites were updated.
         var updateStatus = document.getElementById('updateIgnoreSitesStatus');
@@ -51,45 +48,31 @@ function updateIgnoreSitesList () {
 }
 
 function showIgnoreWarnRetype() {
-  setTimeout(function() {
-    chrome.storage.sync.get({
-      ignoreWarnRetypeList: [],
-      ignoreWarnRetypeListStr: '',
-    }, function(items) {
-      alert('Ignore Warn Retype list: ' + items.ignoreWarnRetypeList + 'Type:' + typeof(items.ignoreWarnRetypeList));
-      alert(items.ignoreWarnRetypeListStr);
-    });
-  }, 750);
+  chrome.storage.sync.get({
+    ignoreWarnRetypeList: [],
+  }, function(items) {
+    alert('Ignore Warn Retype list: ' + items.ignoreWarnRetypeList + 'Type:' + typeof(items.ignoreWarnRetypeList));
+  });
 }
 
 function showIgnoreWarn() {
-  setTimeout(function() {
-    chrome.storage.sync.get({
-      ignoreWarnList: [],
-      ignoreWarnListStr: '',
-    }, function(items) {
-      alert('Ignore Warn list: ' + items.ignoreWarnList);
-      alert(items.ignoreWarnListStr);
-    });
-  }, 750);
+  chrome.storage.sync.get({
+    ignoreWarnList: [],
+  }, function(items) {
+    alert('Ignore Warn list: ' + items.ignoreWarnList);
+  });
 }
 
 //This function shwos all the lists and strings that are currently in storage. 
 function showAll () {
   chrome.storage.sync.get({
     ignoreSitesList: [],
-    ignoreSitesListStr: '',
     ignoreWarnList: [],
-    ignoreWarnListStr: '',
     ignoreWarnRetypeList: [],
-    ignoreWarnRetypeListStr: '',
   }, function(items) {
     alert('Ignore Sites List: ' + items.ignoreSitesList + 
-    '\n Ignore Sites List String: ' + items.ignoreSitesListStr +
     '\n Ignore Warn List: ' + items.ignoreWarnList + 
-    '\n Ignore Warn List String: ' + items.ignoreWarnListStr +
-    '\n Ignore Warn Retype List: ' + items.ignoreWarnRetypeList +
-    '\n Ignore Warn Retype List: ' + items.ignoreWarnRetypeListStr);
+    '\n Ignore Warn Retype List: ' + items.ignoreWarnRetypeList);
   });
 }
 
