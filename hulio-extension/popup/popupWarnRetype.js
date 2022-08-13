@@ -17,24 +17,18 @@ function retyping () {
       
       chrome.storage.sync.get({
         ignoreWarnRetypeList: [],
-        ignoreWarnRetypeListStr: '',
       }, function(items) {
         const ignoreWarnRetypeList = items.ignoreWarnRetypeList;
-        var ignoreWarnRetypeListStr = items.ignoreWarnRetypeListStr;
-        setIgnoreWarnRetypeList(ignoreWarnRetypeList, ignoreWarnRetypeListStr, url);
+        setIgnoreWarnRetypeList(ignoreWarnRetypeList, url);
       });
     };
 
-    function setIgnoreWarnRetypeList(_list, _str, _urlvar) {
-      if (_str.indexOf(_urlvar) == -1) {
-        _list.push(_urlvar);
-        chrome.storage.sync.set({
-          ignoreWarnRetypeList: _list,
-          ignoreWarnRetypeListStr: _str + ", " + _urlvar,
-        }, function() {
-        });
-      } else {
-      }
+    function setIgnoreWarnRetypeList(_list, _urlvar) {
+      _list.push(_urlvar);
+      chrome.storage.sync.set({
+        ignoreWarnRetypeList: _list,
+      }, function() {
+      });
     }
 
     const verify = () =>

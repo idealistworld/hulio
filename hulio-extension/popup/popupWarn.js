@@ -25,14 +25,11 @@ function warnPopup () {
 
     function setIgnoreWarnRetypeList(_list, _urlvar) {
       document.getElementById("popup-warn").remove();
-      if (_str.indexOf(_urlvar) == -1) {
-        _list.push(_urlvar);
-        chrome.storage.sync.set({
-          ignoreWarnList: _list,
-        }, function() {
-        });
-      } else {
-      }
+      _list.push(_urlvar);
+      chrome.storage.sync.set({
+        ignoreWarnList: _list,
+      }, function() {
+      });
     }
 
     document.getElementById("buttonIgnore").onclick = updateIgnoreWarnList;
