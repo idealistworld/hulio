@@ -23,6 +23,7 @@ function removeWww (urlvar) {
 }
 
 const url = removeWww(window.location.host);
+var rowSafeDB = -1;
 
 function updateSettings() {
   chrome.storage.sync.get({
@@ -55,6 +56,7 @@ function checkDB (_DB, _url) {
     testFound = _DB.rows[i].url.indexOf(url);
     if (testFound >= 0) {
       foundSafe = testFound
+      rowSafeDB = i
       break
     } 
   }
@@ -78,4 +80,3 @@ function main() {
 }
 
 result = updateSettings();
-

@@ -3,8 +3,16 @@
 
 
 function moreInfo() {
-  var currentUrl = window.location;
-  window.open(`chrome-extension://mdmgobdkfclkehefjlbalmonlbeopgfb/info/info.html`, "_blank");
+  //Variables to be passed
+  var encodedRowSafeDB = encodeURIComponent(rowSafeDB)
+  var encodedUrl = encodeURIComponent(url)
+  //url
+  let infolUrl = chrome.runtime.getURL("info/info.html?encodedRowSafeDB=" + encodedRowSafeDB + "&encodedUrl=" + encodedUrl);
+  
+  //Send url to be opened to background.js
+  chrome.runtime.sendMessage({func: "openTab", url: infolUrl}, function(response) {
+    console.log(response.status);
+  });
 }
 var hoveringOver = false;
 
