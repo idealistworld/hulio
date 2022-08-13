@@ -131,11 +131,6 @@ function showAll () {
   });
 }
 
-function openAdvanced () {
-  alert("asdf")
-  window.open("advanced.html");
-}
-
 function pullSafeDB () {
   $.getJSON('https://hulio-backend.herokuapp.com/api/website/get_websites', function(json_data){
     if (json_data.status === "success") {
@@ -144,10 +139,30 @@ function pullSafeDB () {
       for (let i = 0; i < rowCount; i++) { 
         alert(JSON.stringify(json_data.result.rows[i].url))
       }
+      chrome.storage.sync.set({
+        SafeDB: json_data.result.rows,
+      }, function() {
+        // Update status to let user know options were saved.
+        var status = document.getElementById('pullSafeDBstatus');
+        status.textContent = 'DB pulled.';
+        setTimeout(function() {
+          status.textContent = '';
+        }, 750);
+      });
     } else {
       alert("Couldn't Acess backend")
     }
   });
+}
+
+function printSafeDB () {
+  setTimeout(function() {
+    chrome.storage.sync.get({
+      SafeDB: '',
+    }, function(items) {
+      alert(JSON.stringify(items.SafeDB));
+    });
+  }, 500);
 }
 
 
