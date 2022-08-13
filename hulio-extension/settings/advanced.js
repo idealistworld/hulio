@@ -1,13 +1,7 @@
 // Saves options to chrome.storage
 function save_options() {
-    var warningCBox = document.getElementById('warningCBox').checked;
-    var retypingCBox = document.getElementById('retypingCBox').checked;
     var debugCBox = document.getElementById('debugCBox').checked;
-    var tutorialsCBox = document.getElementById('tutorialsCBox').checked;
     chrome.storage.sync.set({
-      warningCBox: warningCBox,
-      retypingCBox: retypingCBox,
-      tutorialsCBox: tutorialsCBox,
       debugCBox: debugCBox,
     }, function() {
       // Update status to let user know options were saved.
@@ -24,14 +18,8 @@ function save_options() {
   function restore_options() {
     // Use default value color = 'red' and likesColor = true.
     chrome.storage.sync.get({
-      warningCBox: true,
-      retypingCBox: true,
-      tutorialsCBox: true, 
       debugCBox: false,
     }, function(items) {
-      document.getElementById('warningCBox').checked = items.warningCBox;
-      document.getElementById('retypingCBox').checked = items.retypingCBox;
-      document.getElementById('tutorialsCBox').checked = items.tutorialsCBox;
       document.getElementById('debugCBox').checked = items.debugCBox;
     });
   }
@@ -120,7 +108,6 @@ function showIgnoreWarn() {
   }, 750);
 }
 
-
 //This function shwos all the lists and strings that are currently in storage. 
 function showAll () {
   chrome.storage.sync.get({
@@ -147,9 +134,22 @@ function showAll () {
 function openAdvanced () {
   alert("asdf")
   window.open("advanced.html");
-
-
 }
+
+function pullSafeDB () {
+  $.getJSON('https://hulio-backend.herokuapp.com/api/website/get_websites', function(json_data){
+    if (json_data.status === "success") {
+      alert("Sucessful Api Query")
+      var rowCount = json_data.result.rowCount;
+      for (let i = 0; i < rowCount; i++) { 
+        alert(JSON.stringify(json_data.result.rows[i].url))
+      }
+    } else {
+      alert("Couldn't Acess backend")
+    }
+  });
+}
+
 
 window.onload=function(){
     //Using the vars el1, el2 here to avoid a bug where it said document.getElementById('save') was null
@@ -180,6 +180,10 @@ window.onload=function(){
     var el7 = document.getElementById('advancedSettings')
     if (el7) {
       el7.addEventListener('click', openAdvanced)
+    }
+    var el8 = document.getElementById('pullSafeDB')
+    if (el8) {
+      el8.addEventListener('click', pullSafeDB)
     }
 }
 document.addEventListener('DOMContentLoaded', restore_options);
