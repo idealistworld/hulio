@@ -24,33 +24,6 @@ function save_options() {
     });
   }
 
-//Update the list of safe sites
-function updateSafeSitesList () {
-    //Pull list from somewhere and update the list
-    //Needs to be coded
-    //Then generate the new regex filter
-    //Needs to be coded
-    //Update updateStatus text, then clear it
-    var safeSitesListUrl = "https://idealistworld.github.io/hulio/safeSitesList.txt";
-    var safeSitesList;
-    var safeSitesListStr;
-    $.get(safeSitesListUrl, function( data ) {
-        safeSitesList = data.split("\n");
-        safeSitesListStr = data.toLowerCase();
-        chrome.storage.sync.set({
-          safeSitesList: safeSitesList,
-          safeSitesListStr: safeSitesListStr,
-        }, function() {
-          // Update status to let user know sites were updated.
-          var updateStatus = document.getElementById('updateSafeSitesStatus');
-          updateStatus.textContent = 'Safe Sites List updated.';
-          setTimeout(function() {
-            updateStatus.textContent = '';
-          }, 750);
-        });
-    });
-}
-
 function updateIgnoreSitesList () {
   //Pull list from somewhere and update the list
   //Needs to be coded
@@ -75,13 +48,6 @@ function updateIgnoreSitesList () {
         }, 750);
       });
   });
-  setTimeout(function() {
-    chrome.storage.sync.get({
-      ignoreSitesListStr: '',
-    }, function(items) {
-      alert(ignoreSitesListStr);
-    });
-  }, 750);
 }
 
 function showIgnoreWarnRetype() {
@@ -111,8 +77,6 @@ function showIgnoreWarn() {
 //This function shwos all the lists and strings that are currently in storage. 
 function showAll () {
   chrome.storage.sync.get({
-    safeSitesList: [],
-    safeSitesListStr: '',
     ignoreSitesList: [],
     ignoreSitesListStr: '',
     ignoreWarnList: [],
@@ -120,9 +84,7 @@ function showAll () {
     ignoreWarnRetypeList: [],
     ignoreWarnRetypeListStr: '',
   }, function(items) {
-    alert('Safe Sites List: ' + items.safeSitesList + 
-    '\n Safe Sites List String: ' + items.safeSitesListStr +
-    '\n Ignore Sites List: ' + items.ignoreSitesList + 
+    alert('Ignore Sites List: ' + items.ignoreSitesList + 
     '\n Ignore Sites List String: ' + items.ignoreSitesListStr +
     '\n Ignore Warn List: ' + items.ignoreWarnList + 
     '\n Ignore Warn List String: ' + items.ignoreWarnListStr +
@@ -134,11 +96,6 @@ function showAll () {
 function pullSafeDB () {
   $.getJSON('https://hulio-backend.herokuapp.com/api/website/get_websites', function(json_data){
     if (json_data.status === "success") {
-      alert("Sucessful Api Query")
-      var rowCount = json_data.result.rowCount;
-      for (let i = 0; i < rowCount; i++) { 
-        alert(JSON.stringify(json_data.result.rows[i].url))
-      }
       chrome.storage.sync.set({
         SafeDB: json_data.result,
       }, function() {
@@ -172,9 +129,9 @@ window.onload=function(){
     if (el1) {
         el1.addEventListener('click', save_options);
     }
-    var el2 = document.getElementById('updateSafeSites')
+    var el2 = document.getElementById('pullSafeDB')
     if (el2) {
-        el2.addEventListener('click', updateSafeSitesList)
+      el2.addEventListener('click', pullSafeDB)
     }
     var el3 = document.getElementById('updateIgnoreSitesButton')
     if (el3) {
@@ -195,10 +152,6 @@ window.onload=function(){
     var el7 = document.getElementById('advancedSettings')
     if (el7) {
       el7.addEventListener('click', openAdvanced)
-    }
-    var el8 = document.getElementById('pullSafeDB')
-    if (el8) {
-      el8.addEventListener('click', pullSafeDB)
     }
 }
 document.addEventListener('DOMContentLoaded', restore_options);

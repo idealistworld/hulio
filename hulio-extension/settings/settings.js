@@ -32,33 +32,6 @@ function restore_options() {
   });
 }
 
-//Update the list of safe sites
-function updateSafeSitesList() {
-  //Pull list from somewhere and update the list
-  //Needs to be coded
-  //Then generate the new regex filter
-  //Needs to be coded
-  //Update updateStatus text, then clear it
-  var safeSitesListUrl = "https://idealistworld.github.io/hulio/safeSitesList.txt";
-  var safeSitesList;
-  var safeSitesListStr;
-  $.get(safeSitesListUrl, function (data) {
-    safeSitesList = data.split("\n");
-    safeSitesListStr = data.toLowerCase();
-    chrome.storage.sync.set({
-      safeSitesList: safeSitesList,
-      safeSitesListStr: safeSitesListStr,
-    }, function () {
-      // Update status to let user know sites were updated.
-      var updateStatus = document.getElementById('updateSafeSitesStatus');
-      updateStatus.textContent = 'Safe Sites List updated.';
-      setTimeout(function () {
-        updateStatus.textContent = '';
-      }, 750);
-    });
-  });
-}
-
 function updateIgnoreSitesList() {
   //Pull list from somewhere and update the list
   //Needs to be coded
@@ -83,13 +56,6 @@ function updateIgnoreSitesList() {
       }, 750);
     });
   });
-  setTimeout(function () {
-    chrome.storage.sync.get({
-      ignoreSitesListStr: '',
-    }, function (items) {
-      alert(ignoreSitesListStr);
-    });
-  }, 750);
 }
 
 function showIgnoreWarnRetype() {
