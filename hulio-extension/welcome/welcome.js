@@ -43,13 +43,9 @@ function updateIgnoreSitesList (url) {
         chrome.storage.sync.set({
             ignoreSitesList: ignoreSitesList,
             ignoreSitesListStr: ignoreSitesListStr,
-<<<<<<< HEAD
         }, function () {
             checkLists()
         });
-=======
-        }, function () {});
->>>>>>> a676e8e (Added Explore and Tutorials)
     });
 }
 
@@ -60,23 +56,12 @@ function checkLists () {
         safeSitesListStr: "",
         ignoreSitesListStr: "",
     }, function (items) {
-<<<<<<< HEAD
         if (!(items.safeSitesListStr.length && items.ignoreSitesListStr.length)) {
             alert("Unable to acess the database, extension functionality may be impared. Reinstall or manually pull from the database in settings.");
-=======
         alert(items.safeSitesListStr);
-        if (!(items.safeSitesListStr.length && items.ignoreSitesListStr.length)) {
-            alert("False");
->>>>>>> a676e8e (Added Explore and Tutorials)
         }
     });
 }
-
-<<<<<<< HEAD
-function initLists () {
-    updateSafeSitesList("https://idealistworld.github.io/hulio/safeSitesList.txt");
-    updateIgnoreSitesList("https://idealistworld.github.io/hulio/ignoreSitesList.txt");
-=======
 
 function initLists () {
     updateSafeSitesList("https://idealistworld.github.io/hulio/safeSitesList.txt");
@@ -84,14 +69,10 @@ function initLists () {
     setTimeout (function () {
         checkLists();
     }, 250);
->>>>>>> a676e8e (Added Explore and Tutorials)
 }
 
 setTimeout(function () {
     initLists();
-<<<<<<< HEAD
-  }, 100);
-=======
-  }, 250);
->>>>>>> a676e8e (Added Explore and Tutorials)
+}, 100);
+
 
