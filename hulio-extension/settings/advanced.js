@@ -140,7 +140,7 @@ function pullSafeDB () {
         alert(JSON.stringify(json_data.result.rows[i].url))
       }
       chrome.storage.sync.set({
-        SafeDB: json_data.result.rows,
+        SafeDB: json_data.result,
       }, function() {
         // Update status to let user know options were saved.
         var status = document.getElementById('pullSafeDBstatus');

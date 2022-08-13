@@ -5,7 +5,7 @@
 var warningCBox;
 var retypingCBox;
 var debugCBox;
-var safeSitesListStr = '';
+var SafeDB;
 var foundSafe = -2;
 var ignoreSitesListStr = '';
 var foundIgnoreWarnRetype = -2;
@@ -30,7 +30,7 @@ function updateSettings() {
     warningCBox: true,
     retypingCBox: true,
     debugCBox: false,
-    safeSitesListStr: '',
+    SafeDB: '',
     ignoreSitesListStr: '',
     ignoreWarnRetypeListStr: '',
     ignoreWarnListStr: '',
@@ -38,16 +38,28 @@ function updateSettings() {
     window.warningCBox = items.warningCBox;
     window.retypingCBox = items.retypingCBox;
     window.debugCBox = items.debugCBox;
-    window.safeSitesListStr = items.safeSitesListStr;
+    window.SafeDB = items.SafeDB;
     window.ignoreSitesListStr = items.ignoreSitesListStr;
     window.ignoreWarnRetypeListStr = items.ignoreWarnRetypeListStr;
     window.ignoreWarnListStr = items.ignoreWarnListStr;
-    window.foundSafe = window.safeSitesListStr.indexOf(url);
     setTimeout(function () {
+      checkDB(SafeDB, url)
       main();
     }, 1500);
   });
 }
+
+function checkDB (_DB, _url) {
+  var rowCount = _DB.rowCount;
+  for (let i = 0; i < rowCount; i++) { 
+    testFound = _DB.rows[i].url.indexOf(url);
+    if (testFound >= 0) {
+      foundSafe = testFound
+      break
+    } 
+  }
+}
+
 
 //Main logic of the program
 //Delay 2 seconds to ensure that the website is fully loaded before searching through it
@@ -66,3 +78,4 @@ function main() {
 }
 
 result = updateSettings();
+
