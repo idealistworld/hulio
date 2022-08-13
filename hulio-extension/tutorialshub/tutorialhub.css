@@ -45,8 +45,15 @@ h1 {
 }
 
 .soon {
-  opacity: 0.5;
+  opacity: 0.35;
   background-color: blue;
+}
+
+#infoParagraph {
+  font-size: 17px;
+  width: 85%;
+  font-weight: 300;
+  text-align: center;
 }
 
 button {

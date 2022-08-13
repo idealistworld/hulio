@@ -10,6 +10,13 @@ body {
     color: #ededed;
 }
 
+#infoParagraph {
+  font-size: 17px;
+  width: 85%;
+  font-weight: 300;
+  text-align: center;
+}
+
 .content {
   position: absolute;
   left: 50%;

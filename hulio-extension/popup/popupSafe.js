@@ -4,7 +4,7 @@
 
 function moreInfo() {
   var currentUrl = window.location;
-  window.open(`chrome-extension://kngpjlplailjgbnldhiphphdbjkjoaii/info/info.html?url=${currentUrl}`, "_blank");
+  window.open(`chrome-extension://mdmgobdkfclkehefjlbalmonlbeopgfb/info/info.html`, "_blank");
   alert(currentUrl);
 }
 var hoveringOver = false;
