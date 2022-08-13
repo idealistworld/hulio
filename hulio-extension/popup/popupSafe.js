@@ -5,7 +5,6 @@
 function moreInfo() {
   var currentUrl = window.location;
   window.open(`chrome-extension://mdmgobdkfclkehefjlbalmonlbeopgfb/info/info.html`, "_blank");
-  alert(currentUrl);
 }
 var hoveringOver = false;
 
