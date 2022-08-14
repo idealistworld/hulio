@@ -56,7 +56,8 @@ const checkStep = () => {
             '<div class="popup-tutorial-template popup-2">\n' +
             '<h1 id = "site-title">Connect Wallet</h1>\n' +
             '<p id = "paragraph123456">To trade crypto and interact with the <a class = "vocab" href="https://www.youtube.com/watch?v=1jzROE6EhxM" target="_blank">Solana</a> <a class = "vocab" href="https://coinmarketcap.com/alexandria/article/what-is-a-blockchain" target="_blank">blockchain</a>, you must first connect your <a class = "vocab" href="https://coinmarketcap.com/alexandria/glossary/wallet" target="_blank">wallet</a>. A wallet stores your crypto and is how you interact with <a class = "vocab" href="    https://coinmarketcap.com/alexandria/glossary/decentralized-applications-dapps" target="_blank">decentralized applications</a>.</p>\n' +
-            '<button id="button-1">I already have</button>\n' +
+            `<button>I don't have a wallet</button>\n` +
+            '<button id="button-1">My wallet is connected</button>\n' +
             '</div>'
         const walletButton = document.querySelector('div.px-4.py-3.text-sm.font-semibold.h-full.w-full.leading-none');
         if (walletButton) {

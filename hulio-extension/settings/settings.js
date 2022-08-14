@@ -3,7 +3,7 @@ function save_options() {
   var warningCBox = document.getElementById('warningCBox').checked;
   var retypingCBox = document.getElementById('retypingCBox').checked;
   var tutorialsCBox = document.getElementById('tutorialsCBox').checked;
-  chrome.storage.sync.set({
+  chrome.storage.local.set({
     warningCBox: warningCBox,
     retypingCBox: retypingCBox,
     tutorialsCBox: tutorialsCBox,
@@ -21,7 +21,7 @@ function save_options() {
 // stored in chrome.storage.
 function restore_options() {
   // Use default value color = 'red' and likesColor = true.
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     warningCBox: true,
     retypingCBox: true,
     tutorialsCBox: true,
@@ -44,7 +44,7 @@ function updateIgnoreSitesList() {
   $.get(ignoreSitesListUrl, function (data) {
     ignoreSitesList = data.split("\n");
     ignoreSitesListStr = data.toLowerCase();
-    chrome.storage.sync.set({
+    chrome.storage.local.set({
       ignoreSitesList: ignoreSitesList,
       ignoreSitesListStr: ignoreSitesListStr,
     }, function () {
@@ -60,7 +60,7 @@ function updateIgnoreSitesList() {
 
 function showIgnoreWarnRetype() {
   setTimeout(function () {
-    chrome.storage.sync.get({
+    chrome.storage.local.get({
       ignoreWarnRetypeList: [],
       ignoreWarnRetypeListStr: '',
     }, function (items) {
@@ -72,7 +72,7 @@ function showIgnoreWarnRetype() {
 
 function showIgnoreWarn() {
   setTimeout(function () {
-    chrome.storage.sync.get({
+    chrome.storage.local.get({
       ignoreWarnList: [],
       ignoreWarnListStr: '',
     }, function (items) {
@@ -85,7 +85,7 @@ function showIgnoreWarn() {
 
 //This function shwos all the lists and strings that are currently in storage. 
 function showAll() {
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     safeSitesList: [],
     safeSitesListStr: '',
     ignoreSitesList: [],

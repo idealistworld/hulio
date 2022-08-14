@@ -15,7 +15,7 @@ function retyping () {
     }
     function updateIgnoreWarnRetypeList() {
       
-      chrome.storage.sync.get({
+      chrome.storage.local.get({
         ignoreWarnRetypeList: [],
       }, function(items) {
         const ignoreWarnRetypeList = items.ignoreWarnRetypeList;
@@ -25,7 +25,7 @@ function retyping () {
 
     function setIgnoreWarnRetypeList(_list, _urlvar) {
       _list.push(_urlvar);
-      chrome.storage.sync.set({
+      chrome.storage.local.set({
         ignoreWarnRetypeList: _list,
       }, function() {
       });

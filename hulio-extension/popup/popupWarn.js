@@ -15,7 +15,7 @@ function warnPopup () {
     document.body.prepend(div);
     //Add to ignoreWarnList
     function updateIgnoreWarnList() {
-      chrome.storage.sync.get({
+      chrome.storage.local.get({
         ignoreWarnList: [],
       }, function(items) {
         const ignoreWarnList = items.ignoreWarnList;
@@ -26,7 +26,7 @@ function warnPopup () {
     function setIgnoreWarnRetypeList(_list, _urlvar) {
       document.getElementById("popup-warn").remove();
       _list.push(_urlvar);
-      chrome.storage.sync.set({
+      chrome.storage.local.set({
         ignoreWarnList: _list,
       }, function() {
       });

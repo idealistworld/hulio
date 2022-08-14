@@ -10,7 +10,7 @@ var verifiedWebURL = "Unknown";
 var websiteSigned = "Unknown";
 
 function setFromDB () {
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     SafeDB: '',
   }, function(items) {
     //Debugging

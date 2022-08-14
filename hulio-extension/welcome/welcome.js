@@ -33,7 +33,7 @@ window.onload = function () {
 function pullSafeDB () {
     $.getJSON('https://hulio-backend.herokuapp.com/api/website/get_websites', function(json_data){
         if (json_data.status === "success") {
-            chrome.storage.sync.set({
+            chrome.storage.local.set({
                 SafeDB: json_data.result,
             }, function() {});
         } else {
@@ -48,7 +48,7 @@ function updateIgnoreSitesList (url) {
     var ignoreSitesList;
     $.get(url, function (data) {
         ignoreSitesList = data.split("\n");
-        chrome.storage.sync.set({
+        chrome.storage.local.set({
             ignoreSitesList: ignoreSitesList,
         }, function () {
         });

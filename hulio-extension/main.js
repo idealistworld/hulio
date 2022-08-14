@@ -26,7 +26,7 @@ const url = removeWww(window.location.host);
 var rowSafeDB = -1;
 
 function updateSettings() {
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     //Set default results
     warningCBox: true,
     retypingCBox: true,

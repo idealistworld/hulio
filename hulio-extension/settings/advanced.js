@@ -1,7 +1,7 @@
 // Saves options to chrome.storage
 function save_options() {
     var debugCBox = document.getElementById('debugCBox').checked;
-    chrome.storage.sync.set({
+    chrome.storage.local.set({
       debugCBox: debugCBox,
     }, function() {
       // Update status to let user know options were saved.
@@ -17,7 +17,7 @@ function save_options() {
   // stored in chrome.storage.
   function restore_options() {
     // Use default value color = 'red' and likesColor = true.
-    chrome.storage.sync.get({
+    chrome.storage.local.get({
       debugCBox: false,
     }, function(items) {
       document.getElementById('debugCBox').checked = items.debugCBox;
@@ -34,7 +34,7 @@ function updateIgnoreSitesList () {
   var ignoreSitesList;
   $.get(ignoreSitesListUrl, function( data ) {
     ignoreSitesList = data.split("\n");
-      chrome.storage.sync.set({
+      chrome.storage.local.set({
         ignoreSitesList: ignoreSitesList,
       }, function() {
         // Update status to let user know sites were updated.
@@ -48,7 +48,7 @@ function updateIgnoreSitesList () {
 }
 
 function showIgnoreWarnRetype() {
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     ignoreWarnRetypeList: [],
   }, function(items) {
     alert('Ignore Warn Retype list: ' + items.ignoreWarnRetypeList + 'Type:' + typeof(items.ignoreWarnRetypeList));
@@ -56,7 +56,7 @@ function showIgnoreWarnRetype() {
 }
 
 function showIgnoreWarn() {
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     ignoreWarnList: [],
   }, function(items) {
     alert('Ignore Warn list: ' + items.ignoreWarnList);
@@ -65,7 +65,7 @@ function showIgnoreWarn() {
 
 //This function shwos all the lists and strings that are currently in storage. 
 function showAll () {
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     ignoreSitesList: [],
     ignoreWarnList: [],
     ignoreWarnRetypeList: [],
@@ -79,7 +79,7 @@ function showAll () {
 function pullSafeDB () {
   $.getJSON('https://hulio-backend.herokuapp.com/api/website/get_websites', function(json_data){
     if (json_data.status === "success") {
-      chrome.storage.sync.set({
+      chrome.storage.local.set({
         SafeDB: json_data.result,
       }, function() {
         // Update status to let user know options were saved.
@@ -97,7 +97,7 @@ function pullSafeDB () {
 
 function printSafeDB () {
   setTimeout(function() {
-    chrome.storage.sync.get({
+    chrome.storage.local.get({
       SafeDB: '',
     }, function(items) {
       alert(JSON.stringify(items.SafeDB));
