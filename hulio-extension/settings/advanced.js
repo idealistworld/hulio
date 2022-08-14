@@ -136,5 +136,9 @@ window.onload=function(){
     if (el7) {
       el7.addEventListener('click', openAdvanced)
     }
+    var el8 = document.getElementById('printSafeDB')
+    if (el8) {
+      el8.addEventListener('click', printSafeDB)
+    }
 }
 document.addEventListener('DOMContentLoaded', restore_options);

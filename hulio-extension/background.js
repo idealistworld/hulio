@@ -13,7 +13,9 @@ chrome.runtime.onMessage.addListener(
         if (request.func === "openTab") {
             chrome.tabs.create({ url: request.url }, function (tab) {});
             sendResponse({farewell: "Sucess"});
+        } else {
+            sendResponse({farewell: "Not working"});
         }
-        sendResponse({farewell: "Not working"});
     }
 );
+
