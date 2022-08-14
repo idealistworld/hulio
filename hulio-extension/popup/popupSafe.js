@@ -32,11 +32,9 @@ function safePopup() {
   //This HTML is inserted at the top of the body. 
   div.innerHTML =
     '<div id="popup-safe">\n' +
-    '<div id="popup-safe-content">\n' +
-    '<h1 id = "title123456">This is Verified</h1>\n' +
+    '<h1 id="superTitle">This Site is Verified</h1>\n' +
     '<p id = "paragraph123456">Click below to learn more about verification.</p>\n' +
-    '<button id="moreInfo">More Info</button>\n' +
-    '</div>\n' +
+    '<button id="moreInfo">View More Info</button>\n' +
     '</div>\n'
   document.body.prepend(div);
   //Fade out after a few seconds

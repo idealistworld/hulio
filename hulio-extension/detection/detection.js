@@ -3,7 +3,7 @@
 //Only runs if url is not matched
 function detectSolana(debugCBox) {
     //Scrape all the websites text and make it lowercase.
-    var content = document.body.textContent || document.body.innerText;
+    var content = document.body.innerHtml || document.body.textContent;
     var contentLowerCase = content.toLowerCase()
     //Terms
     var hasSolana = contentLowerCase.indexOf("solana")!==-1;
