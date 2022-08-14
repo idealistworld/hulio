@@ -5,6 +5,7 @@
 var warningCBox;
 var retypingCBox;
 var debugCBox;
+var tutorialsCBox;
 var SafeDB;
 var foundSafe = -1;
 var ignoreSitesList;
@@ -12,6 +13,7 @@ var foundIgnoreSites = -2;
 var ignoreWarnRetypeList;
 var foundIgnoreWarn = -2;
 var ignoreWarnList;
+var tutorialCompleteList;
 
 
 function removeWww (urlvar) {
@@ -31,18 +33,22 @@ function updateSettings() {
     warningCBox: true,
     retypingCBox: true,
     debugCBox: false,
+    tutorialsCBox: true,
     SafeDB: '',
     ignoreSitesList: [],
-    ignoreWarnRetypeList: '',
-    ignoreWarnList: '',
+    ignoreWarnRetypeList: [],
+    ignoreWarnList: [],
+    tutorialCompleteList: [],
   }, function(items) {
     window.warningCBox = items.warningCBox;
     window.retypingCBox = items.retypingCBox;
     window.debugCBox = items.debugCBox;
+    window.tutorialsCBox = items.tutorialsCBox;
     window.SafeDB = items.SafeDB;
     window.ignoreSitesList = items.ignoreSitesList;
     window.ignoreWarnRetypeList = items.ignoreWarnRetypeList;
     window.ignoreWarnList = items.ignoreWarnList;
+    window.tutorialCompleteList = items.tutorialCompleteList;
     setTimeout(function () {
       checkDB(SafeDB, url)
       main();

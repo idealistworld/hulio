@@ -23,13 +23,11 @@ function setFromDB () {
 }
 
 function popuplateData () {
-    var projectTitle = document.getElementById("projectTitle");
-    insertString = "<a href='https://" + url + "'>" + url.toUpperCase()+ "</a>"
-    projectTitle.innerHTML = insertString
-
-    //We don't have this data yet
-    document.getElementById("smartContractInfo").innerHTML = smartContract;
-
+    //var projectTitle = document.getElementById("projectTitle");
+    document.getElementById("projectTitle").innerHTML = url.toUpperCase();
+    insertString = "<a href='https://" + url + "'>" + url.toUpperCase()+ "</a>";
+    var str2 = "https://" + url
+    document.getElementById("projectTitleLink").href = str2;
     //This is hard coded to our adress
     adress = "2v155UE19ghxH5CoUpBZQwjtYKHR9g4z7eS5qhPgJxTy"
     adressName = "Hulio Team"
@@ -41,8 +39,10 @@ function popuplateData () {
 
     //date
     document.getElementById("verifiedWebURL").innerHTML = verifiedWebURL;
+    document.getElementById("verifiedWebURLLink").href = str2;
     //Date
     document.getElementById("websiteSigned").innerHTML = websiteSigned;
+    document.getElementById("websiteSignedLink").href = "https://solscan.io/tx/" + transactionHash;
 }
 
 window.addEventListener('load', setFromDB);

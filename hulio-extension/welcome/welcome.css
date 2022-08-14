@@ -3,14 +3,14 @@
 
 body {
     background-image: url('../images/background.jpg');
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', sans-serif;
     color: #ededed;
 }
 
 .content {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     display: flex;
@@ -29,15 +29,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fade 5s linear;
 }
 
 
 #hulioLogo {
     width: 60%;
+    margin-bottom: 30px;
+    animation: fade 2s linear;
 }
 
 button {
-    font-family: 'IBM Plex Mono', monospace;
     border-radius: 5px;
     border: 0 solid rgba(0, 0, 0, 0);
     font-weight: 500;
@@ -63,8 +65,42 @@ button:hover {
     width: 85%;
 }
 
+#welcome {
+    animation: fade 7s linear;
+    font-weight: 900;
+}
+
 #introParagraph {
     text-align: center;
     font-size: 20px;
     font-weight: 400;
+    width: 95%;
+    animation: fade 9s linear;
+}
+
+#tutorials {
+    animation: fade 10s linear;
+}
+
+#projects {
+    animation: fade 10.5s linear;
+}
+
+#configure {
+    animation: fade 11s linear;
+}
+
+
+@keyframes fade {
+    0% {
+        opacity: 0
+    }
+
+    30% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
 }

@@ -34,7 +34,7 @@ function safePopup() {
     '<div id="popup-safe">\n' +
     '<div id="popup-safe-content">\n' +
     '<h1 id = "title123456">This Site is Safe</h1>\n' +
-    '<p id = "paragraph123456">Click this link to learn more about verification.</p>\n' +
+    '<p id = "paragraph123456">Click below to learn more about verification.</p>\n' +
     '<button id="moreInfo">More Info</button>\n' +
     '</div>\n' +
     '</div>\n'

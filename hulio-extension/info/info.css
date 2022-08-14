@@ -100,5 +100,6 @@ a:hover {
 
 #projectTitle {
     padding: 0px;
-    text-decoration: none;
+    text-decoration: none !important;
+    color: white !important;
 }

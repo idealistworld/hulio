@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -51,7 +51,6 @@ h1 {
 
 #infoParagraph {
   font-size: 20px;
-  width: 85%;
   font-weight: 400;
   text-align: center;
 }
