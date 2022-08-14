@@ -3,7 +3,7 @@
 
 body {
     background-image: url('../images/background.jpg');
-    font-family: 'Inter', sans-serif;
+    font-family: 'IBM Plex Mono', monospace;
     color: #ededed;
 }
 
@@ -20,11 +20,24 @@ body {
     height: 50%;
 }
 
+#interaction {
+    padding: 20px 40px;
+    width: 100%;
+    background-image: url("../images/background.jpg");
+    border: 1em ridge #6042a6;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 #hulioLogo {
     width: 60%;
 }
 
 button {
+    font-family: 'IBM Plex Mono', monospace;
     border-radius: 5px;
     border: 0 solid rgba(0, 0, 0, 0);
     font-weight: 500;

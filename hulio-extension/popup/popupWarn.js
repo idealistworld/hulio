@@ -9,7 +9,7 @@ function warnPopup () {
         '<div id="popup-safe-content">\n' +
         '<h1 id = "title123456">This Site Might Not be Secure</h1>\n' +
           '<p id = "paragraph123456">This website is not part of your current whitelist. Double check the URL to be safe.</p>\n' +
-          '<button id="buttonIgnore">Ignore</button>\n' +
+          '<button id="buttonIgnore">Ignore this Site</button>\n' +
         '</div>\n' + 
       '</div>\n'
     document.body.prepend(div);

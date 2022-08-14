@@ -63,5 +63,3 @@ function initLists () {
 setTimeout(function () {
     initLists();
 }, 100);
-
-

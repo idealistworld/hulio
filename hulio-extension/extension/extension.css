@@ -2,7 +2,7 @@
 
 * {
     color: #ededed;
-    font-family: 'Inter', sans-serif;
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
 button {
     border-radius: 5px;
     border: 0 solid rgba(0, 0, 0, 0);
-    font-weight: 500;
+    font-weight: 900;
     background: #5e38bf;
     color: #EDEDED;
     position: relative;

@@ -67,3 +67,13 @@
   opacity: 0.7;
   cursor: pointer;
 }
+
+
+.vocab {
+  color: #7245e5 !important;
+  font-weight: 900 !important;
+}
+
+.vocab:hover {
+  opacity: 0.5;
+}

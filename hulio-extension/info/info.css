@@ -99,7 +99,6 @@ a:hover {
 }
 
 #projectTitle {
-    margin-bottom: 35px;
     padding: 0px;
-    font-size: 100px;
+    text-decoration: none;
 }
