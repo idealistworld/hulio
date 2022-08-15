@@ -42,7 +42,7 @@ function giveReward (addy) {
             method: 'POST',
             headers: {
                 "Authorization": "Bearer " + token,
-          }
+            }
         });
         const content = await rawResponse.json();
         console.log(content);
