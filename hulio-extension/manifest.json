@@ -10,7 +10,9 @@
     },
     "content_scripts": [
         {
-            "js": ["tutorials/jup.js"],
+            "js": ["tutorials/jup.js", 
+                "settings/jquery-3.6.0.js"
+            ],
             "css": ["tutorials/jup.css"],
             "matches": ["https://jup.ag/*"]
         },

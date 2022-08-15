@@ -39,8 +39,17 @@
   color: #EDEDED;
 }
 
+#userInput12345, textarea { background-color: cyan !important;}
+
+#userInput12345 {
+  background-color: rgb(45, 45, 45) !important;
+  color: white !important;
+  width: 300px !important;
+}
+
 #paragraph123456 {
   font-size: 15px;
+  margin: 0px;
 }
 
 #popup-safe-paragraph {

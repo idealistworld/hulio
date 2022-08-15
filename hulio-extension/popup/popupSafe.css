@@ -20,11 +20,16 @@
 #superTitle {
   font-size: 25px;
   font-weight: 900;
+  color: white;
+  margin-bottom: -10px;
+
 }
 
 #paragraph123456 {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
+  color: white;
+  margin: 0px;
 }
 
 #moreInfo {

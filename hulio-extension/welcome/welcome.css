@@ -68,6 +68,8 @@ button:hover {
 #welcome {
     animation: fade 7s linear;
     font-weight: 900;
+    font-size: 50px;
+    text-align: center;
 }
 
 #introParagraph {
