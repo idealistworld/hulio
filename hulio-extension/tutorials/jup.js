@@ -170,7 +170,7 @@ const checkStep = () => {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-2">\n' +
             '<h1 id = "site-title">Swap Solana</h1>\n' +
-            "<p id = 'paragraph123456'>You recieved some Solana earlier. Now, let's assume you think Solana is going to decrease in value. Let's exchange it for <a class = 'vocab' href=`https://www.youtube.com/watch?v=cK8bAA6H5PY&ab_channel=WhiteboardCrypto` target=`_blank`>USDT</a> instead. First, select SOL in the You pay section.</p>\n" +
+            "<p id = 'paragraph123456'>You recieved some Solana earlier. Now, let's assume you think Solana is going to decrease in value. Let's exchange it for <a class = 'vocab' href='https://www.youtube.com/watch?v=cK8bAA6H5PY&ab_channel=WhiteboardCrypto' target='_blank'>USDT</a> instead. First, select SOL in the You pay section.</p>\n" +
             "<button id='button-1'>Continue</button>\n" +
             '</div>'
         document.getElementById("button-1").onclick = increment
@@ -231,10 +231,10 @@ const checkStep = () => {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-2">\n' +
             `<h1 id = "site-title"> Let's Swap! </h1>\n` +
-            "<p id = 'paragraph123456'>Now it's time to swap the Solana for USDT. Jupiter automatically chooses the cheapest route for your swap. Here's more info on <a class = 'vocab' href='https://coinmarketcap.com/alexandria/article/what-are-dex-aggregators-a-deep-dive-by-1inch' target='_blank'>routing</a>.</p>\n" +
+            "<p id = 'paragraph123456'>Now it's time to swap the Solana for USDT. Click the highlighted Swap button to initiate the swap. Jupiter automatically chooses the cheapest route for your swap. Here's more info on <a class = 'vocab' href='https://coinmarketcap.com/alexandria/article/what-are-dex-aggregators-a-deep-dive-by-1inch' target='_blank'>routing</a>.</p>\n" +
             "<button id='button-1'>Continue</button>\n" +
             '</div>'
-        document.getElementById("button-1").onclick = increment
+        document.getElementById("button-1").onclick = null
 
         const walletButton7 = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.group.cursor-pointer > button > div")
         walletButton7.style.border = "#a64942 5px solid";
@@ -242,16 +242,16 @@ const checkStep = () => {
         const walletButton8 = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.w-full.rounded-xl.bg-white-75.dark\\:bg-white.dark\\:bg-opacity-5.shadow-lg.flex.flex-col.p-4.lg\\:px-6.lg\\:py-8 > div.border-b.border-transparent > div");
         walletButton8.style.border = "#a64942 0px solid";
         walletButton8.style.borderRadius = "10px";
-    }
-
-    else if (step === 13) {
-        document.getElementById("button-1").onclick = null
         const swapButton = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.group.cursor-pointer > button > div");
         if (swapButton) {
             swapButton.addEventListener('click', increment);
             swapButton.style.border = "#a64942 5px solid";
             swapButton.style.borderRadius = "10px";
         }
+    }
+
+    else if (step === 13) {
+        increment()
     }
 
     else if (step === 14) {
@@ -268,7 +268,7 @@ const checkStep = () => {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
             '<h1 id = "site-title">Wait for the Transaction</h1>\n' +
-            "<p id = 'paragraph123456'>Your Solana is being sent to one or more <a class = 'vocab' href=`https://coinmarketcap.com/alexandria/article/decentralized-liquidity-pools-a-deep-dive-with-finnexus-options` target=`_blank`>liquidity pools</a> right now. Typically liquidity pools have two assets. When you send an asset to a liquidity pool, the pool sends back an equivalent amount of the other asset by value. The liquidity pool will often take a small fee for processing the exchange. Your transaction should only take a few seconds and may already be done. Check your wallet and see if you received your USDT.</p>\n" +
+            "<p id = 'paragraph123456'>Your Solana is being sent to one or more <a class = 'vocab' href='https://coinmarketcap.com/alexandria/article/decentralized-liquidity-pools-a-deep-dive-with-finnexus-options' target='_blank'>liquidity pools</a> right now. Typically liquidity pools have two assets. When you send an asset to a liquidity pool, the pool sends back an equivalent amount of the other asset by value. The liquidity pool will often take a small fee for processing the exchange. Your transaction should only take a few seconds and may already be done. Check your wallet and see if you received your USDT.</p>\n" +
             "<button id='button-1'>Continue</button>\n" +
             '</div>'
         document.getElementById("button-1").onclick = increment
@@ -278,7 +278,7 @@ const checkStep = () => {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
             '<h1 id = "site-title">Tutorial Done</h1>\n' +
-            "<p id = 'paragraph123456'>You just made a swap on a <a class = 'vocab' href=`https://coinmarketcap.com/alexandria/glossary/dex-aggregator` target=`_blank`>dex aggregator</a>! Now that was pretty easy, huh? Keep learning about the Solana ecosystem by checking out more tutorials below!</p>\n" +
+            "<p id = 'paragraph123456'>You just made a swap on a <a class = 'vocab' href='https://coinmarketcap.com/alexandria/glossary/dex-aggregator' target='_blank'>dex aggregator</a>! Now that was pretty easy, huh? Keep learning about the Solana ecosystem by checking out more tutorials below!</p>\n" +
             "<button class = 'button12345' id='button-2'>More Tutorials</button>\n" +
             "<button id='button-1'>Close</button>\n" +
             '</div>'
