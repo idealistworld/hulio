@@ -1,3 +1,13 @@
+CONTENTS OF THIS FILE
+
+Introduction
+How it Works Overview
+Demo Video
+Demo Installation
+How it Works Technical
+Future plans
+
+
 ## hulio
 Our goal is to make sure the next “1B+ crypto users” are not just passive holders, but engaged, educated, and active web3 community members.
 We plan to accomplish this through increasing security for web3 users and providing a on chain “Coinbase Earn” type program for teaching users about the Solana dApp ecosystem. These two features will lower the barrier to entry for passive holders and help enable them to become active web3 users.
@@ -27,7 +37,7 @@ https://youtu.be/TOdbDQ44sC4
   
 
 ## How We Built hulio and Future Plans
-hulio is currently comprised of the [website](https://hulio.app/), the web extension and a simple express postgresql backend hosted on heroku. The file structure can be seen below:
+hulio is currently comprised of the [website](https://hulio.app/), the chrome extension, and a simple express postgresql backend hosted on heroku. The file structure can be seen below:
 
 ```
 /website ## hulio.app website
