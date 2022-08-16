@@ -1,6 +1,6 @@
 ## hulio
 Our goal is to make sure the next “1B+ crypto users” are not just passive holders, but engaged, educated, and active web3 community members.
-We plan to accomplish this through increasing security for web3 users and providing a “Coinbase Earn” type program for teaching users about the Solana dApp ecosystem. These two features will lower the barrier to entry for passive holders and help enable them to become active web3 users.
+We plan to accomplish this through increasing security for web3 users and providing a on chain “Coinbase Earn” type program for teaching users about the Solana dApp ecosystem. These two features will lower the barrier to entry for passive holders and help enable them to become active web3 users.
   
 
 
