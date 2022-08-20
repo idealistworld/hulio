@@ -2,7 +2,7 @@ const introParagraph = "<p>Web3? dApp? Blockchain? You can count on hulio to be 
 const mainButtons = `<button onclick="window.open('https://github.com/idealistworld/hulio', '_blank')" id="action-button1" class="fifth" onclick="location.href = 'https://youtube.com';"> Download </button> <button id="action-button2" class="fifth" onclick="howItWorks()">Features</button></div>`;
 const arrayNavButtons = `<div style = "width: 40%;"><button id="action-button2" class="fifth nav" onclick="prev()">Previous</button> <button id="action-button2" class="fifth nav" onclick="next()", '_blank')">Continue</button>`;
 const vanityMetrics = `<div id="vanity-metrics"><div id="vanity1"> <h1>30+</h1> <div class="vanity-writing"> Solana Partners </div> </div> <div id="vanity2"> <h1>10,000+</h1> <div class="vanity-writing"> Downloads </div> </div> </div>`;
-const actionButtons = `<div id="action-button"> <button id="action-button1" class="fifth glow" onclick="window.open('https://github.com/idealistworld/hulio', '_blank')"> Download </button>                   <button id="action-button2" class="fifth glow" onclick="window.open('https://github.com/idealistworld/hulio', '_blank')" >
+const actionButtons = `<div id="action-button"> <button id="action-button1" class="fifth glow" onclick="window.open('https://github.com/idealistworld/hulio', '_blank')"> Download </button>                   <button id="action-button2" class="fifth glow" onclick="window.open('https://twitter.com/hulioapp', '_blank')" >
 <img id="twitter" src="./twitter.png">
     Twitter
 </button> </div>`;
