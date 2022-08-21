@@ -2,16 +2,21 @@ let step = 0;
 
 let popup = document.createElement("div");
 
+//Advance to the next step
 function increment() {
     step++
     checkStep()
 };
 
+//Advance 2 steps
 function incrementOnClick() {
     step = step + 2
     checkStep();
 }
 
+//Check if the innerHTML of elem is the same as crypto
+//If it is incriment
+//If not then go to the previous step
 function checkCrypto(elem, crypto) {
     el = document.querySelector(elem)
     if (el.innerHTML === crypto) {
@@ -23,6 +28,9 @@ function checkCrypto(elem, crypto) {
 }
 
 
+//Check if the value of elem is the same as crypto
+//If it is incriment
+//If not then go to the previous step
 function checkAmt(elem, crypto) {
     el = document.querySelector(elem)
     if (el.value === crypto) {
@@ -33,6 +41,9 @@ function checkAmt(elem, crypto) {
     }
 }
 
+//This function sends an api request
+//Currently throws errors, and is not used
+//Cross domain api calls?
 function giveReward (addy) {
     var sendApiUrl = "https://hulio-backend.herokuapp.com/api/transaction/send/";
     var token = "BLK!rj4J1&hgKVTAHrl435wQRDmdGN";
@@ -54,8 +65,8 @@ function giveReward (addy) {
 
 const checkStep = () => {
     //step 1
+    //Introduction
     if (step === 0) {
-
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
             '<h1 id = "site-title">Jupiter</h1>\n' +
@@ -66,20 +77,23 @@ const checkStep = () => {
         document.getElementById("button-1").onclick = increment
     }
 
-
     //step 2
     else if (step === 1) {
         popup.innerHTML =
 
             '<div class="popup-tutorial-template popup-2">\n' +
             '<h1 id = "site-title">Connect Wallet</h1>\n' +
-            '<p id = "paragraph123456">To swap crypto and interact with the <a class = "vocab" href="https://www.youtube.com/watch?v=1jzROE6EhxM" target="_blank">Solana</a> <a class = "vocab" href="https://coinmarketcap.com/alexandria/article/what-is-a-blockchain" target="_blank">blockchain</a>, you must first connect your <a class = "vocab" href="https://coinmarketcap.com/alexandria/glossary/wallet" target="_blank">wallet</a>. A wallet stores your crypto and is how you interact with <a class = "vocab" href="    https://coinmarketcap.com/alexandria/glossary/decentralized-applications-dapps" target="_blank">decentralized applications</a>.</p>\n' +
+            '<p id = "paragraph123456">To swap crypto and interact with the <a class = "vocab" href="https://www.youtube.com/watch?v=1jzROE6EhxM" target="_blank">Solana</a> <a class = "vocab" href="https://coinmarketcap.com/alexandria/article/what-is-a-blockchain" target="_blank">blockchain</a>, you must first connect your <a class = "vocab" href="https://coinmarketcap.com/alexandria/glossary/wallet" target="_blank">wallet</a>. A wallet stores your crypto and is how you interact with <a class = "vocab" href="    https://coinmarketcap.com/alexandria/glossary/decentralized-applications-dapps" target="_blank">decentralized applications</a>. Click the "Connect Wallet" button in the top right corner. </p>\n' +
             `<button target="_blank" class = "button12345" onclick="window.open('https://phantom.app/');">Get a wallet</button>\n` +
             '<button id="button-1">My wallet is connected</button>\n' +
             '</div>'
+        //Select the wallet button
         const walletButton = document.querySelector('div.px-4.py-3.text-sm.font-semibold.h-full.w-full.leading-none');
+        //Check if the wallet button exists
         if (walletButton) {
+            //Make the walletButton advance our tutorial on click
             walletButton.addEventListener('click', increment);
+            //Change the styling of the button to make it easier for the user
             walletButton.style.border = "#a64942 5px solid";
             walletButton.style.borderRadius = "10px";
             setTimeout (function () {
