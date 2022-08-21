@@ -109,10 +109,6 @@ const checkStep = () => {
 
     //step 3
     //Select the wallet from the list
-    //User has to manually click continue
-    //Would have to query selector so many elements,
-    //!!!1Or could possibly wait for connect wallet button to dissaper
-    //Plan to impliment this
     else if (step === 2) {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-2">\n' +
