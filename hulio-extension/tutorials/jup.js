@@ -96,18 +96,25 @@ const checkStep = () => {
             //Change the styling of the button to make it easier for the user
             walletButton.style.border = "#a64942 5px solid";
             walletButton.style.borderRadius = "10px";
+            //Rerun the function to see if the user somehow connected their wallet without clicking the connect wallet button
+            //Timeouts below 500ms start to be glitchy
             setTimeout (function () {
                 checkStep();
             }, 500)
         } else {
+            //If the wallet button doesn't exist, skip two steps. 
             incrementOnClick()
         }
     }
 
     //step 3
+    //Select the wallet from the list
+    //User has to manually click continue
+    //Would have to query selector so many elements,
+    //!!!1Or could possibly wait for connect wallet button to dissaper
+    //Plan to impliment this
     else if (step === 2) {
         popup.innerHTML =
-
             '<div class="popup-tutorial-template popup-2">\n' +
             '<h1 id = "site-title">Select Wallet</h1>\n' +
             '<p id = "paragraph123456">Select your wallet from the "connect wallet" list. A popup will open. Click the "connect" button to continue.</p>\n' +
@@ -123,6 +130,8 @@ const checkStep = () => {
         }
     }
 
+    //Step 3
+    //Back to the main program flow
     else if (step === 3) {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
@@ -133,6 +142,9 @@ const checkStep = () => {
         document.getElementById("button-1").onclick = increment
     }
 
+    //Step 4
+    //Give user enough Solana to interact with jup.ag
+    //Function needs to be fixed on the backend
     else if (step === 4) {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
