@@ -63,6 +63,14 @@ function showIgnoreWarn() {
   });
 }
 
+function showTutorialCompleteList() {
+  chrome.storage.local.get({
+    tutorialCompleteList: [],
+  }, function(items) {
+    alert('Tutorial Complete List: ' + items.tutorialCompleteList)
+});
+}
+
 //This function shwos all the lists and strings that are currently in storage. 
 function showAll () {
   chrome.storage.local.get({
@@ -139,6 +147,10 @@ window.onload=function(){
     var el8 = document.getElementById('printSafeDB')
     if (el8) {
       el8.addEventListener('click', printSafeDB)
+    }
+    var el9 = document.getElementById('showTutorialCompleteList')
+    if (el9) {
+      el9.addEventListener('click', showTutorialCompleteList)
     }
 }
 document.addEventListener('DOMContentLoaded', restore_options);
