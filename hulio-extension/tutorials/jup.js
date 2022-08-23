@@ -1,6 +1,20 @@
+//Constants
 let step = 0;
 
 let popup = document.createElement("div");
+
+var initBalanace = -1
+
+//Check balance
+function checkBalance (el) {
+    regex = /.+?(?= SOL)/
+    return Number(el.innerHTML.match(regex))
+}
+
+function compareBalance (el) {
+    
+}
+
 
 //Advance to the next step
 function increment() {
@@ -161,9 +175,15 @@ const checkStep = () => {
             }
         }
         document.getElementById("button-1").onclick = incrementSend
+        const initBalanceContent = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.items-center.justify-between.w-full.px-4.py-4.md\\:px-8 > div.flex.items-center.justify-end.flex-1.space-x-4 > div.cursor-pointer.relative > div > div > div.ml-2 > div.text-sm.font-semibold.text-black.dark\\:text-white")
+        initBalanace = checkBalance(initBalanceContent)
     }
 
+    //Step 5
+    //Countdown
+    //Ideally, this should only advance when we detect a balance change, either on page, or using web3js
     else if (step === 5) {
+        alert(initBalanace)
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
             '<h1 id = "site-title">Wait for Transaction</h1>\n' +
@@ -178,10 +198,20 @@ const checkStep = () => {
                     if (time) {
                         time.textContent = (seconds - i);
                     }
-                }, i * 1000)                
+                    //Check if balance is the same or different
+                    var curBalanceContent = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.items-center.justify-between.w-full.px-4.py-4.md\\:px-8 > div.flex.items-center.justify-end.flex-1.space-x-4 > div.cursor-pointer.relative > div > div > div.ml-2 > div.text-sm.font-semibold.text-black.dark\\:text-white")
+                    if (initBalanace === -1) {
+                        console.log("Balance was never initialized. Step 5 error")
+                    } else {
+                        if (!(checkBalance(curBalanceContent) === initBalanace)) {
+                            i = seconds
+                            increment()
+                        }
+                    }
+                }, i * 1000)
             }
         }
-        countDown(30)
+        countDown(60)
         var highLight = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.items-center.justify-between.w-full.px-4.py-4.md\\:px-8 > div.flex.items-center.justify-end.flex-1.space-x-4 > div.cursor-pointer.relative > div > div > div.ml-2")
         highLight.style.border = "#a64942 5px solid";
         highLight.style.borderRadius = "10px";
@@ -192,7 +222,7 @@ const checkStep = () => {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-2">\n' +
             '<h1 id = "site-title">Swap Solana</h1>\n' +
-            "<p id = 'paragraph123456'>You recieved some Solana earlier. Now, let's assume you think Solana is going to decrease in value. Let's exchange it for <a class = 'vocab' href='https://www.youtube.com/watch?v=cK8bAA6H5PY&ab_channel=WhiteboardCrypto' target='_blank'>USDT</a> instead. First, select SOL in the You pay section.</p>\n" +
+            "<p id = 'paragraph123456'>You just recieved 0.01 Solana. Now, let's assume you think Solana is going to decrease in value. Let's exchange it for <a class = 'vocab' href='https://www.youtube.com/watch?v=cK8bAA6H5PY&ab_channel=WhiteboardCrypto' target='_blank'>USDT</a> instead. First, select SOL in the You pay section.</p>\n" +
             "<button id='button-1'>Continue</button>\n" +
             '</div>'
         document.getElementById("button-1").onclick = increment
