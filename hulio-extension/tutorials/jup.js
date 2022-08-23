@@ -33,12 +33,7 @@ function incrementOnClick() {
 //If not then go to the previous step
 function checkCrypto(elem, crypto) {
     el = document.querySelector(elem)
-    if (el.innerHTML === crypto) {
-        increment();
-    } else {
-        step = step - 1
-        checkStep();
-    }
+    
 }
 
 
@@ -183,7 +178,6 @@ const checkStep = () => {
     //Countdown
     //Ideally, this should only advance when we detect a balance change, either on page, or using web3js
     else if (step === 5) {
-        alert(initBalanace)
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
             '<h1 id = "site-title">Wait for Transaction</h1>\n' +
@@ -235,7 +229,19 @@ const checkStep = () => {
     }
 
     else if (step === 7) {
-        checkCrypto("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.w-full.rounded-xl.bg-white-75.dark\\:bg-white.dark\\:bg-opacity-5.shadow-lg.flex.flex-col.p-4.lg\\:px-6.lg\\:py-8 > div.border-b.border-transparent > div > div > div > div > button > div.ml-4.mr-2.font-semibold", 'SOL');
+        //Select element
+        var elem = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.w-full.rounded-xl.bg-white-75.dark\\:bg-white.dark\\:bg-opacity-5.shadow-lg.flex.flex-col.p-4.lg\\:px-6.lg\\:py-8 > div.border-b.border-transparent > div > div > div > div > button > div.ml-4.mr-2.font-semibold")
+        //Crypto to be matched
+        var crypto = 'SOL';
+        //Check if the text of element is matches the crypto that we want the user to select
+        if (elem.innerHTML === crypto) {
+            //If it does advance one step
+            increment();
+        } else {
+            //If it doesnt go back one step
+            step = step - 1
+            checkStep();
+        }
     }
 
     else if (step === 8) {
@@ -255,7 +261,16 @@ const checkStep = () => {
     }
 
     else if (step === 9) {
-        checkCrypto("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.w-full.rounded-xl.bg-white-75.dark\\:bg-white.dark\\:bg-opacity-5.shadow-lg.flex.flex-col.p-4.lg\\:px-6.lg\\:py-8 > div.px-3 > div > div > div > button > div.ml-4.mr-2.font-semibold", "USDT");
+        var elem = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.w-full.rounded-xl.bg-white-75.dark\\:bg-white.dark\\:bg-opacity-5.shadow-lg.flex.flex-col.p-4.lg\\:px-6.lg\\:py-8 > div.px-3 > div > div > div > button > div.ml-4.mr-2.font-semibold")
+        var crypto = "USDT"
+        if (elem.innerHTML === crypto) {
+            //If it does advance one step
+            increment();
+        } else {
+            //If it doesnt go back one step
+            step = step - 1
+            checkStep();
+        }
     }
 
     else if (step === 10) {
@@ -276,7 +291,26 @@ const checkStep = () => {
 
     else if (step == 11) {
         document.getElementById("button-1").onclick = null
-        checkAmt("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.w-full.rounded-xl.bg-white-75.dark\\:bg-white.dark\\:bg-opacity-5.shadow-lg.flex.flex-col.p-4.lg\\:px-6.lg\\:py-8 > div.border-b.border-transparent > div > div > div > div > div > input", "0.005")
+        var payElem = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.w-full.rounded-xl.bg-white-75.dark\\:bg-white.dark\\:bg-opacity-5.shadow-lg.flex.flex-col.p-4.lg\\:px-6.lg\\:py-8 > div.border-b.border-transparent > div > div > div > div > button > div.ml-4.mr-2.font-semibold")
+        var payCrypto = 'SOL';
+        //Check if the text of element is matches the crypto that we want the user to select
+        if (payElem.innerHTML === payCrypto) {
+            //Check recieve currency
+            var recElem = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.w-full.rounded-xl.bg-white-75.dark\\:bg-white.dark\\:bg-opacity-5.shadow-lg.flex.flex-col.p-4.lg\\:px-6.lg\\:py-8 > div.px-3 > div > div > div > button > div.ml-4.mr-2.font-semibold")
+            var recCrypto = "USDT"
+            if (recElem.innerHTML === recCrypto) {
+                //If it does advance one step
+                checkAmt("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.flex-col.justify-between > div > div.w-full.max-w-md > div.w-full.max-w-md.pb-6.md\\:pb-12.lg\\:pb-24 > form > div.w-full.rounded-xl.bg-white-75.dark\\:bg-white.dark\\:bg-opacity-5.shadow-lg.flex.flex-col.p-4.lg\\:px-6.lg\\:py-8 > div.border-b.border-transparent > div > div > div > div > div > input", "0.005")
+            } else {
+                //If it doesnt go back one step
+                step = 8
+                checkStep();
+        }
+        } else {
+            //If it doesnt go back one step
+            step = 6
+            checkStep();
+        }
     }
 
     else if (step === 12) {
