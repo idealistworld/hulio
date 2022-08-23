@@ -317,7 +317,7 @@ const checkStep = () => {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-2">\n' +
             `<h1 id = "site-title"> Let's Swap! </h1>\n` +
-            "<p id = 'paragraph123456'>Now it's time to swap the Solana for USDT. Click the highlighted Swap button to initiate the swap. Jupiter automatically chooses the cheapest route for your swap. Here's more info on <a class = 'vocab' href='https://coinmarketcap.com/alexandria/article/what-are-dex-aggregators-a-deep-dive-by-1inch' target='_blank'>routing</a>.</p>\n" +
+            "<p id = 'paragraph123456'>Now it's time to swap the Solana for USDT. Click the highlighted Swap button to initiate the swap, you may have to scroll down. Jupiter automatically chooses the cheapest route for your swap. Here's more info on <a class = 'vocab' href='https://coinmarketcap.com/alexandria/article/what-are-dex-aggregators-a-deep-dive-by-1inch' target='_blank'>routing</a>.</p>\n" +
             "<button id='button-1'>Continue</button>\n" +
             '</div>'
         document.getElementById("button-1").onclick = null
@@ -341,13 +341,22 @@ const checkStep = () => {
     }
 
     else if (step === 14) {
-        popup.innerHTML =
+        popup.innerHTML = 
+            '<div class="popup-tutorial-template popup-1">\n' +
+            '<h1 id = "site-title">Approve the Transaction</h1>\n' +
+            "<p id = 'paragraph123456'>Click the purple approve button on the popup to submit the transaction to the Solana network to be processed.</p>\n" +
+            '</div>'
+
+        setTimeout (function () {
+            popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
             '<h1 id = "site-title">Approve the Transaction</h1>\n' +
             "<p id = 'paragraph123456'>Click the purple approve button on the popup to submit the transaction to the Solana network to be processed.</p>\n" +
             "<button id='button-1'>Continue</button>\n" +
             '</div>'
-        document.getElementById("button-1").onclick = increment
+            document.getElementById("button-1").onclick = increment
+        }, 5000)
+        
     }
 
     else if (step === 15) {
