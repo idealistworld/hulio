@@ -1,20 +1,20 @@
 const introParagraph = "<p>Web3? dApp? Blockchain? You can count on hulio to be with you through it all. Learn your way around the ecosystem, stay safe, and even earn free Solana with ease. hulio helps strengthen existing projects by providing an in-browser solution to common crypto user experience pitfalls. Whether a newcomer or veteran, hulio will enhance your adventures in the world of crypto!</p> ";
-const mainButtons = `<button onclick="window.open('https://github.com/idealistworld/hulio', '_blank')" id="action-button1" class="fifth" onclick="location.href = 'https://youtube.com';"> Download </button> <button id="action-button2" class="fifth" onclick="howItWorks()">Features</button></div>`;
+const mainButtons = `<button onclick="window.open('https://chrome.google.com/webstore/detail/hulio/olikokhekcibedhfkhbkmphgmopigibb', '_blank')" id="action-button1" class="fifth" onclick="location.href = 'https://youtube.com';"> Download </button> <button id="action-button2" class="fifth" onclick="howItWorks()">Features</button></div>`;
 const arrayNavButtons = `<div style = "width: 40%;"><button id="action-button2" class="fifth nav" onclick="prev()">Previous</button> <button id="action-button2" class="fifth nav" onclick="next()", '_blank')">Continue</button>`;
 const vanityMetrics = `<div id="vanity-metrics"><div id="vanity1"> <h1>30+</h1> <div class="vanity-writing"> Solana Partners </div> </div> <div id="vanity2"> <h1>10,000+</h1> <div class="vanity-writing"> Downloads </div> </div> </div>`;
-const actionButtons = `<div id="action-button"> <button id="action-button1" class="fifth glow" onclick="window.open('https://github.com/idealistworld/hulio', '_blank')"> Download </button>                   <button id="action-button2" class="fifth glow" onclick="window.open('https://twitter.com/hulioapp', '_blank')" >
+const actionButtons = `<div id="action-button"> <button id="action-button1" class="fifth glow" onclick="window.open('https://chrome.google.com/webstore/detail/hulio/olikokhekcibedhfkhbkmphgmopigibb', '_blank')"> Download </button>                   <button id="action-button2" class="fifth glow" onclick="window.open('https://twitter.com/hulioapp', '_blank')" >
 <img id="twitter" src="./twitter.png">
     Twitter
 </button> </div>`;
 const infoLinks = `<div style = "width: 80%;"><button id="action-button2" class="fifth nav" onclick="window.open('https://docs.google.com/presentation/d/1voLaGQ93hmkyzcT5xl4rcQb-_wgRvSuW7KEf2tH71cE/edit?usp=sharing', '_blank')">Pitch Deck</button> <button id="action-button2" class="fifth nav" onclick="window.open('https://youtu.be/Dq0MKkCk99s', '_blank')">Pitch Video</button>`;
 const contactUs = `<div>Being crypto enthusiasts at heart, we cherish the space, community, and constantly strive to help all aspects of it. Whether you’re looking to partner or just chat, we’d love to connect. Hope to hear from you soon!</div>`
 
-const step1 = '<div style = "width: 80%;"><h2>Explore the Ecosystem </h2></div>We provide users with in-browser tutorials for dApps in the Solana ecosystem. Our guides explain what the dApps do, how they work, and even walk users through practice exercises using the application. <div class = "spacing"></div><div style = "width: 80%;"><h2>Get Rewarded </h2></div>We provide users with free Solana when engaging in tutorials, allowing them to interact with dApps without having to buy crypto. <div class = "spacing"></div>';
+const step1 = '<div style = "width: 80%;"><h2>Learn About dApps </h2></div>We provide users with in-browser tutorials for dApps in the Solana ecosystem. Our guides explain what the dApps do, how they work, and even walk users through practice exercises using real decentralized applications. <div class = "spacing"></div><div style = "width: 80%;"><h2>Get Rewarded </h2></div>We provide users with free Solana when engaging in tutorials, allowing them to interact with dApps without having to buy crypto or owning any prior. <div class = "spacing"></div>';
 const step2 = '<div style = "width: 80%;"><h2>Browse Securely</h2></div>Avoid scams with our anti-phishing security popups. We verify each visited website with our decentralized database.<div class = "spacing"></div><div style = "width: 80%;"><h2>Blockchain Verification </h2></div>We allow smart contract developers to sign and verify their URL on the Solana blockchain, providing an extra layer of security and verification. <div class = "spacing"></div>';
-const step3 = '<div style = "width: 80%;"><h2>Engage </h2></div>Description of this feature coming soon.  More detail and capabilites on the way.<div class = "spacing"></div><div style = "width: 80%;"><h2>Stay Safe </h2></div>Description of this feature coming soon.  More detail and capabilites on the way. <div class = "spacing"></div>';
-const title1 = '<h1>Features | Get Started</h1>';
-const title2 = '<h1>Features | Stay Safe</h1>';
-const title3 = '<h1>Features | Engage</h1>';
+const step3 = '<div style = "width: 80%;"><h2>Explore the Ecosystem </h2></div>Be the first to the newest applications in the Solana ecosystem. Our team handpicks and verifies each project.<div class = "spacing"></div><div style = "width: 80%;"><h2>Get in Early </h2></div>We partner with upcoming projects to provide perks for hulio users that engage with their product. <div class = "spacing"></div>';
+const title1 = '<h1>Features | Education</h1>';
+const title2 = '<h1>Features | Safety</h1>';
+const title3 = '<h1>Features | Exploration</h1>';
 
 
 const arr2 = [title1, title2, title3];
@@ -51,7 +51,7 @@ const next = () => {
 const contact = () => {
     document.getElementById("writing-title").innerHTML = "<h1>Let's Get Talking.</h1>";
     document.getElementById("writing-paragraph").innerHTML = contactUs;
-    document.getElementById("action-button").innerHTML = `<button onclick="location.href = 'mailto: cnakayama567@gmail.com';" class="btn-flip" data-back="Hello! :)" data-front="Email Us"></button> <button onclick="window.open('https://t.me/idealist', '_blank')" class="btn-flip" data-back="Hello! :)" data-front="Text Us"></Button>`;
+    document.getElementById("action-button").innerHTML = `<button onclick="location.href = 'mailto: team@hulio.app';" class="btn-flip" data-back="Hello! :)" data-front="Email Us"></button> <button onclick="window.open('https://t.me/idealist', '_blank')" class="btn-flip" data-back="Hello! :)" data-front="Text Us"></Button>`;
     document.getElementById("vanity-metrics").innerHTML = "";
 }
 
