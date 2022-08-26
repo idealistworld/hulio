@@ -1,7 +1,7 @@
 {
     "name": "hulio",
     "description": "Your Friend that Does Crypto",
-    "version": "1.0",
+    "version": "1.0.1",
     "manifest_version": 3,
     "icons": {
         "16": "./images/16.png",
