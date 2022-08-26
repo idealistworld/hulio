@@ -198,8 +198,9 @@ const checkStep = () => {
                         console.log("Balance was never initialized. Step 5 error")
                     } else {
                         if (!(checkBalance(curBalanceContent) === initBalanace)) {
-                            i = seconds
                             increment()
+                            //Use window.i not i, cause setting i equal to something doesn't work
+                            window.i = seconds;
                         }
                     }
                 }, i * 1000)
