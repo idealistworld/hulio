@@ -70,7 +70,35 @@ function giveReward (addy) {
 }
 
 
-
+function countDown2 (seconds) {
+    var counter = 0;
+    var limit = seconds;
+    var myVar = setInterval(function(){
+        //Debugging
+        console.log(counter + "" + limit); 
+        counter++;
+        time = document.getElementById("time")
+        if (time) {
+            time.textContent = (limit - counter);
+        }
+        //Check if balance is the same or different
+        var curBalanceContent = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.items-center.justify-between.w-full.px-4.py-4.md\\:px-8 > div.flex.items-center.justify-end.flex-1.space-x-4 > div.cursor-pointer.relative > div > div > div.ml-2 > div.text-sm.font-semibold.text-black.dark\\:text-white")
+        if (initBalanace === -1) {
+            console.log("Balance was never initialized. Step 5 error")
+        } else {
+            if (!(checkBalance(curBalanceContent) === initBalanace)) {
+                increment()
+                counter = 10000000
+                return   
+            }
+        }
+        if (counter > limit) {
+            clearInterval(myVar);
+        }
+        //Debugging
+        console.log(counter + "" + limit); 
+    }, 1000);
+}
 
 const checkStep = () => {
     //step 1
@@ -181,7 +209,7 @@ const checkStep = () => {
         popup.innerHTML =
             '<div class="popup-tutorial-template popup-1">\n' +
             '<h1 id = "site-title">Wait for Transaction</h1>\n' +
-            "<h1 id = 'site-title'><span id='time'>30</span></h1>\n" +
+            "<h1 id = 'site-title'><span id='time'>60</span></h1>\n" +
             "<p id = 'paragraph123456'>Wait for the countdown to finish to receive your Solana. Once you see the value change in the top right corner, click the continue button.</p>\n" +
             "<button id='button-1'>Continue</button>\n" +
             '</div>'
@@ -199,14 +227,12 @@ const checkStep = () => {
                     } else {
                         if (!(checkBalance(curBalanceContent) === initBalanace)) {
                             increment()
-                            //Use window.i not i, cause setting i equal to something doesn't work
-                            window.i = seconds;
                         }
                     }
                 }, i * 1000)
             }
         }
-        countDown(60)
+        countDown2(60)
         var highLight = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.items-center.justify-between.w-full.px-4.py-4.md\\:px-8 > div.flex.items-center.justify-end.flex-1.space-x-4 > div.cursor-pointer.relative > div > div > div.ml-2")
         highLight.style.border = "#a64942 5px solid";
         highLight.style.borderRadius = "10px";
