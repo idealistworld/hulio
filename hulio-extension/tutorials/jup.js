@@ -11,8 +11,17 @@ function checkBalance (el) {
     return Number(el.innerHTML.match(regex))
 }
 
-function compareBalance (el) {
-    
+//Go to a specific step in checkStep
+function goToStep (x) {
+    step = x
+    checkStep()
+}
+
+//Create a function that goes to a specific step in checkStep
+function customIncrement (stepNum) {
+    return function () {
+        goToStep(stepNum)
+    }
 }
 
 
@@ -70,7 +79,7 @@ function giveReward (addy) {
 }
 
 
-function countDown2 (seconds) {
+function countDown (seconds) {
     var counter = 0;
     var limit = seconds;
     var myVar = setInterval(function(){
@@ -87,9 +96,8 @@ function countDown2 (seconds) {
             console.log("Balance was never initialized. Step 5 error")
         } else {
             if (!(checkBalance(curBalanceContent) === initBalanace)) {
-                increment()
+                goToStep(6)
                 counter = 10000000
-                return   
             }
         }
         if (counter > limit) {
@@ -213,26 +221,7 @@ const checkStep = () => {
             "<p id = 'paragraph123456'>Wait for the countdown to finish to receive your Solana. Once you see the value change in the top right corner, click the continue button.</p>\n" +
             "<button id='button-1'>Continue</button>\n" +
             '</div>'
-        function countDown (seconds) {
-            for (let i = 0; i < seconds + 1; i++) {
-                setTimeout (function () {
-                    time = document.getElementById("time")
-                    if (time) {
-                        time.textContent = (seconds - i);
-                    }
-                    //Check if balance is the same or different
-                    var curBalanceContent = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.items-center.justify-between.w-full.px-4.py-4.md\\:px-8 > div.flex.items-center.justify-end.flex-1.space-x-4 > div.cursor-pointer.relative > div > div > div.ml-2 > div.text-sm.font-semibold.text-black.dark\\:text-white")
-                    if (initBalanace === -1) {
-                        console.log("Balance was never initialized. Step 5 error")
-                    } else {
-                        if (!(checkBalance(curBalanceContent) === initBalanace)) {
-                            increment()
-                        }
-                    }
-                }, i * 1000)
-            }
-        }
-        countDown2(60)
+        countDown(60)
         var highLight = document.querySelector("#__next > div.flex.flex-col.min-h-screen.justify-between > div > div.flex.items-center.justify-between.w-full.px-4.py-4.md\\:px-8 > div.flex.items-center.justify-end.flex-1.space-x-4 > div.cursor-pointer.relative > div > div > div.ml-2")
         highLight.style.border = "#a64942 5px solid";
         highLight.style.borderRadius = "10px";
