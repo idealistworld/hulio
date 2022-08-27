@@ -77,7 +77,20 @@ function main() {
   } else if (foundSafe === -1) {
     if (warningCBox) {
       if (!(checkList (ignoreSitesList, url))) {
-        detectSolana(debugCBox);  
+        detected = detection(debugCBox);
+        if (detected) {
+          warning()
+        } else {
+          //Rescan html every 4 seconds for terms
+          var myInterval = setInterval(function() {
+            detected = detection(debugCBox);
+            if (detected) {
+              clearInterval(myInterval)
+              warning()
+            }  
+          }, 4000);
+        }
+        
       }
     }
   } else {
