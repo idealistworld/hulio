@@ -113,6 +113,19 @@ function printSafeDB () {
   }, 500);
 }
 
+function clearSafeDB () {
+  chrome.storage.local.set({
+    SafeDB: [],
+  }, function() {
+    // Update status to let user know what happaned. 
+    var status = document.getElementById('clearSafeDBstatus');
+    status.textContent = 'DB Cleared.';
+    setTimeout(function() {
+      status.textContent = '';
+    }, 750);
+  });
+}
+
 
 window.onload=function(){
     //Using the vars el1, el2 here to avoid a bug where it said document.getElementById('save') was null
@@ -123,6 +136,10 @@ window.onload=function(){
     var el2 = document.getElementById('pullSafeDB')
     if (el2) {
       el2.addEventListener('click', pullSafeDB)
+    }
+    var elClearSafeDB = document.getElementById('clearSafeDB')
+    if (elClearSafeDB) {
+      elClearSafeDB.addEventListener('click', clearSafeDB)
     }
     var el3 = document.getElementById('updateIgnoreSitesButton')
     if (el3) {
@@ -139,10 +156,6 @@ window.onload=function(){
     var el6 = document.getElementById('showAllLists')
     if (el6) {
       el6.addEventListener('click', showAll)
-    }
-    var el7 = document.getElementById('advancedSettings')
-    if (el7) {
-      el7.addEventListener('click', openAdvanced)
     }
     var el8 = document.getElementById('printSafeDB')
     if (el8) {
