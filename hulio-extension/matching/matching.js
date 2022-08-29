@@ -1,7 +1,6 @@
+// Credit to 
 // Burkhard-Keller Tree (BK-Tree) Example
-// Jonah H. Harris <jonah.harris@gmail.com>
-
-
+// Jonah H. Harris <jonah.harris (at) gmail (dot) com>
 
 function match () {
     var levenshtein = (function () {
