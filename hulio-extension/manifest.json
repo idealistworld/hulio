@@ -29,6 +29,7 @@
             ],
             "js": [
                 "detection/detection.js",
+                "matching/matching.js",
                 "popup/popupSafe.js",
                 "popup/popupWarn.js",
                 "popup/popupWarnRetype.js",

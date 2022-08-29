@@ -7,6 +7,7 @@ var retypingCBox;
 var debugCBox;
 var tutorialsCBox;
 var SafeDB;
+var SafeDBList;
 var foundSafe = -1;
 var ignoreSitesList;
 var foundIgnoreSites = -2;
@@ -35,6 +36,7 @@ function updateSettings() {
     debugCBox: false,
     tutorialsCBox: true,
     SafeDB: '',
+    SafeDBList: [],
     ignoreSitesList: [],
     ignoreWarnRetypeList: [],
     ignoreWarnList: [],
@@ -45,6 +47,7 @@ function updateSettings() {
     window.debugCBox = items.debugCBox;
     window.tutorialsCBox = items.tutorialsCBox;
     window.SafeDB = items.SafeDB;
+    window.SafeDBList = items.SafeDBList;
     window.ignoreSitesList = items.ignoreSitesList;
     window.ignoreWarnRetypeList = items.ignoreWarnRetypeList;
     window.ignoreWarnList = items.ignoreWarnList;
@@ -79,6 +82,7 @@ function main() {
       if (!(checkList (ignoreSitesList, url))) {
         detected = detection(debugCBox);
         if (detected) {
+          match()
           warning()
         } else {
           //Rescan html every 4 seconds for terms

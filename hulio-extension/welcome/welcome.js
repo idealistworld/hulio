@@ -33,8 +33,10 @@ window.onload = function () {
 function pullSafeDB () {
     $.getJSON('https://hulio-backend.herokuapp.com/api/website/get_websites', function(json_data){
         if (json_data.status === "success") {
+            SafeDBList = dbToList(json_data.result)
             chrome.storage.local.set({
                 SafeDB: json_data.result,
+                SafeDBList: SafeDBList,
             }, function() {});
         } else {
             alert("Couldn't Acess backend")
@@ -42,7 +44,25 @@ function pullSafeDB () {
     });
 }
 
+//Convert the database to a list
+function dbToList (_DB) {
+    var list = []
+    for (let i = 0; i < _DB.rowCount; i++) { 
+        //Remove "https://" from the begginning of each URL
+        var temp = removeFromBegginning(_DB.rows[i].url, "https://")
+        list.push(temp)
+    }
+    return list
+}
 
+//Remove _phrase from _str, if _phrase in _str
+function removeFromBegginning (_str, _phrase) {
+    if (_str.indexOf(_phrase) === -1) {
+        return _str;
+    } else {
+        return _str.substring(_phrase.length);
+    }
+}
 
 function updateIgnoreSitesList (url) {
     var ignoreSitesList;
