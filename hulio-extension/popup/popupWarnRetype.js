@@ -58,7 +58,7 @@ function retyping () {
     const html =  '<div id="popup12345">\n' +
     '<div id = "overlay12345"></div>\n' +
     '<div id = "content12345">\n' +
-      '<h1 id = "title12345">This is a risky site.</h1>\n' +
+      '<h1 id = "title12345">This is a potentially risky site.</h1>\n' +
       '<p id = "paragraph12345">This page is not in our database. Verify the URL before accessing it.</p>\n' +
       `<input  autocomplete="off" id = "userInput12345" placeholder="example.com" type ="text"></input>\n` +
     '</div>\n' +

@@ -100,18 +100,9 @@ function match () {
             }
         }
     };
-    var terms = SafeDBList
-    // Build the tree
-    var tree = new bktree(terms);
+    var tree = new bktree(SafeDBList);
   
-    // Get correctly spelled words at distance <= 3
+    // Get correctly spelled words at distance <= 10
     var r = tree.query(url, 10);
-    // [ 'referred', 'preferred' ]
-  
-    console.log(r)
-    // Return closest
-    var r = tree.query(url, 10, 1);
-    // [ 'referred' ]
-  
-    console.log(r)
+    return r
 }

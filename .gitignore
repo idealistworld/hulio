@@ -3,3 +3,5 @@ hulio-extension/web3js/src/index.js
 
 hulio-backend/node_modules
 hulio-backend/.env
+.DS_Store
+hulio-extension/.DS_Store

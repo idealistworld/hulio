@@ -15,6 +15,7 @@ var ignoreWarnRetypeList;
 var foundIgnoreWarn = -2;
 var ignoreWarnList;
 var tutorialCompleteList;
+var closest = [];
 
 
 function removeWww (urlvar) {
@@ -80,9 +81,9 @@ function main() {
   } else if (foundSafe === -1) {
     if (warningCBox) {
       if (!(checkList (ignoreSitesList, url))) {
+        closest = match()
         detected = detection(debugCBox);
         if (detected) {
-          match()
           warning()
         } else {
           //Rescan html every 4 seconds for terms
