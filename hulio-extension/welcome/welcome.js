@@ -39,7 +39,7 @@ function pullSafeDB () {
                 SafeDBList: SafeDBList,
             }, function() {});
         } else {
-            alert("Couldn't Acess backend")
+            alert("Couldn't Access backend")
         }
     });
 }
