@@ -31,6 +31,7 @@ function detection(debugCBox) {
 //Warning function, runs on websites that are solana related but unknown
 //Only runs if warningCBox is checked
 function warning() {
+  checkDNS()
     if (retypingCBox) {
       if (!(checkList(ignoreWarnRetypeList, url))) {
         retyping();

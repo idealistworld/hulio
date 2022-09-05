@@ -2,7 +2,6 @@ import fetch from "node-fetch";
 
 var url = "solend.fi"
 var apiKey = "11ec109720e04e049940d6b81e3eae8b"
-var jsonResult = []
 
 var requestOptions = {
     method: 'GET',
@@ -36,3 +35,10 @@ var updated = Math.floor((currentDateUnix - updateDateUnix)/86400)
 var created = Math.floor((currentDateUnix - createDateUnix)/86400)
 console.log("DNS was registered " + created + " days ago")
 console.log("DNS was updated " + updated + " days ago")
+
+
+
+var test;
+if (test) {
+    console.log("hi")
+}

@@ -84,5 +84,32 @@ function retyping () {
     if (elemMatchedUrlText) {
       elemMatchedUrlText.innerHTML = closest[0]
     }
-    document.getElementById("userInput12345").oninput = verify;
+
+  function setDnsWarning () {
+    var paragraph12345 = document.getElementById("paragraph12345")
+    if (paragraph12345) {
+      if (updated && created) {
+        var normalText = "This page is not in our database. Verify the URL before accessing it. "
+        if (created > 1) {
+          var createdText = "The DNS record was registered " + created + " days ago "
+        } else {
+          var createdText = "The DNS record was registered within the last day "
+        }
+        if (updated > 1) {
+          var updatedText = "and updated " + updated + " days ago."
+        } else {
+          var updatedText = "and updated within the last day."
+        }
+        paragraph12345.innerHTML = normalText + createdText + updatedText
+      }
+    }
+  }
+  
+  var myInterval = setInterval(function() {
+    if (updated && created) {
+      setDnsWarning()
+      clearInterval(myInterval)
+    }  
+  }, 500);
+  document.getElementById("userInput12345").oninput = verify;
 }

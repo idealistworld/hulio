@@ -15,6 +15,8 @@ var ignoreWarnRetypeList;
 var foundIgnoreWarn = -2;
 var ignoreWarnList;
 var tutorialCompleteList;
+var created;
+var updated;
 var closest = [];
 
 
